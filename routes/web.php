@@ -11,15 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('geromouvOriginal');
-// });
-
 Route::get('/', function () {
-    return view('geromouvMoi');
+    return view('geromouvCleanUp');
 });
 
