@@ -1,7 +1,5 @@
 let mix = require('laravel-mix');
 
-// https://browsersync.io/docs/options
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
