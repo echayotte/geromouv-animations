@@ -715,11 +715,11 @@ button::-moz-focus-inner {
     margin: 0 0 3em 0;
 }
 
-.entry-content h2 span {
+.entry-content h2 {
     color: #ff6600;
 }
 
-.entry-content p span {
+.entry-content p {
     font-size: 14pt;
 }
 

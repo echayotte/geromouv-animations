@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('geromouvCleanUp');
+// Route::get('/', function () {
+//     return view('geromouvCleanUp');
+// });
+
+
+Route::get('/article', function () {
+    return view('pages.articles.article');
+});
+
+Route::get('/geromouv-animations/presentation/', function () {
+    return view('pages.presentation.index');
 });
 
