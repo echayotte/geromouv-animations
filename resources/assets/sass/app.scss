@@ -1,6 +1,142 @@
 @import './../css/style.css';
 // Variables
 @import "variables";
-
 // lien pour images : url("/storage/images/assets/xxx"
-// $source-sans-pro:'Source Sans Pro',sans-serif;
+$f-ssp:'Source Sans Pro',
+sans-serif;
+$f-o: 'Oswald',
+sans-serif;
+$f-dn: 'Droid Serif Regular';
+$f-di: 'Droid Serif Italic';
+.main-content {
+    aside div a {
+        display:scroll;
+        position:fixed;
+        bottom:15px;
+        right:45px;
+        img {
+            scale: 0;
+            width: 25px;
+            height: 25px;
+        }
+    }
+    section {
+        .cards {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            &__card {
+                position: relative;
+                overflow: hidden;
+            }
+            .card {
+                width: 32%;
+                height: 166px;
+                &__body {
+                    padding: 1em;
+                    top: 100%;
+                }
+                &:hover .card__body {
+                    position: absolute;
+                    top: 50px;
+                    background: $orangeDark;
+                    color: $white;
+                    height: 100%;
+                    width: 100%;
+                    transition: top .5s;
+                    margin: 0;
+                    h3 {
+                        font-weight: bolder;
+                        text-align: left;
+                        color: $white;
+                    }
+                    a {
+                        border-radius: 2px;
+                        background-color: $white;
+                        font-style: none;
+                        color: $orange;
+                        padding: 4px 8px;
+                        margin-left: 110px;
+                        font-weight: bolder;
+                        box-shadow: 1px 1px 2px $greyDark;
+                    }
+                    a:hover {
+                        font-weight: bolder;
+                        background-color: $green;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        iframe {
+            border: none;
+            padding-bottom: 20px;
+            width: 100%;
+            height: 438px;
+        }
+        .alignleft {
+            width: 120px;
+            height: 120px;
+        }
+        p {
+            text-align: justify;
+        }
+        .presentation-infos {
+            &__list {
+                list-style-type: none;
+                margin-left: -14px;
+            }
+            &__items {
+                padding-bottom: 24px;
+            }
+            .items {
+                &__sub-items {
+                    list-style-type: none;
+                    .sub-items {
+                        &__title, &__date, &__place, &__more, &__dot {
+                            display: inline; 
+                            font-weight: bolder;
+                            vertical-align: baseline;
+                        }
+                        &__title {
+                            color: $orangeDark;
+                            text-transform: uppercase;
+                            margin: 0 0 0 4px;
+                            font-weight: 900;
+
+                        }
+                        &__date, &__place {
+                            color: $green;
+                            font-size: 1.8rem;
+                        }
+                        &__more {
+                            a {
+                                border-radius: 2px;
+                                background-color: $green;
+                                color: $white;
+                                font-style: none;
+                                padding: 4px 8px;
+                                margin-right: 10px;
+                                box-shadow: 1px 1px 2px $greyDark;
+
+                            }
+
+                            a:hover {
+                                background-color: $orange;
+                                color: $white;
+                            }
+                        }
+                        &__dot {
+                            margin: 0 6px;
+                            color: $orange;
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .hidden-sections {
+        display: none;
+    }
+}
