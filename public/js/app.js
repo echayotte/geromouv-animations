@@ -76,9 +76,9 @@ module.exports = __webpack_require__(4);
 /***/ (function(module, exports, __webpack_require__) {
 
 //mobile navigation
-__webpack_require__(10);
+__webpack_require__(2);
 
-__webpack_require__(11);
+__webpack_require__(3);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -103,20 +103,7 @@ __webpack_require__(11);
 // });
 
 /***/ }),
-/* 2 */,
-/* 3 */,
-/* 4 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /**
@@ -180,10 +167,16 @@ __webpack_require__(11);
 })();
 
 /***/ }),
-/* 11 */
+/* 3 */
 /***/ (function(module, exports) {
 
 console.log("hello world");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
