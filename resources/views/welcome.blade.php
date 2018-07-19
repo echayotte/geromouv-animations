@@ -66,6 +66,9 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+            <li class="current_page_item">
+                <a href="{{('home')}}">Retour</a>
+            </li>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth

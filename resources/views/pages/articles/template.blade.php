@@ -2,6 +2,7 @@
 
 @section('content')
     <article class="page">
+        
         <header class="entry-header">
             <h1 class="entry-title">H1</h1>
         </header>

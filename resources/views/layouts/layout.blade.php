@@ -30,6 +30,9 @@
 				<div>
 					<ul>
 						<li class="current_page_item">
+							<a href="{{('home')}}">Retour</a>
+						</li>
+						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
 						<li>

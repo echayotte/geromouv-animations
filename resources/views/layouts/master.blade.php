@@ -2,8 +2,9 @@
     <div class="content-wrapper full-width without-featured-image">
         <div class="content-area">
             <div class="site-main">
-
-                @yield('content')
+                <article class="page">
+                    @yield('content')
+                </article>
                 <!-- .page-->
                 
             </div>
