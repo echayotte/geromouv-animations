@@ -1,26 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('geromouvCleanUp');
-// });
-
-
-Route::get('/article', function () {
-    return view('pages.articles.article');
+Route::get('/', function () {
+    return view('home');
 });
 
-Route::get('/geromouv-animations/presentation/', function () {
-    return view('pages.presentation.index');
-});
+Route::view('/home', 'home');
+Route::view('/welcome', 'welcome');
+Route::view('/template', '/pages/articles/template')->name('template');
+Route::view('/article', '/pages/articles/article')->name('article');
+Route::view('/presentation', '/pages/presentation/index')->name('presentation');
+Route::view('/inscription', '/pages/inscription/index')->name('inscription');
+Route::view('/animations', '/pages/animations/index')->name('animations');
 
