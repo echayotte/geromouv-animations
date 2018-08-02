@@ -762,6 +762,13 @@ button::-moz-focus-inner {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+.site-info a {
+    color: #fff;
+}
+
+.site-info a:hover {
+    color: #f8c998;
+}
 
 /*--------------------------------------------------------------
 13 Media Queries
