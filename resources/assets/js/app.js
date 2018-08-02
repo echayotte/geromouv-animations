@@ -1,8 +1,8 @@
+
+require('./bootstrap');
+
 //mobile navigation
 require('./partials/navigation');
-
-require('./partials/main');
-
 
 
 
@@ -12,7 +12,6 @@ require('./partials/main');
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
 
 // window.Vue = require('vue');
 

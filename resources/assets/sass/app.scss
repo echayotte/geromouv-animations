@@ -1,23 +1,46 @@
+// sela style from wordpress geromouv's original
 @import './../css/style.css';
-// Variables
+// datepicker in french
+@import "datepicker-jquery-ui";
+// variables
 @import "variables";
-// lien pour images : url("/storage/images/assets/xxx"
-$f-ssp:'Source Sans Pro',
-sans-serif;
-$f-o: 'Oswald',
-sans-serif;
-$f-dn: 'Droid Serif Regular';
-$f-di: 'Droid Serif Italic';
+
+
+// links pour images : url("/storage/images/assets/xxx"
+
+
 .main-content {
     aside div a {
-        display:scroll;
-        position:fixed;
-        bottom:15px;
-        right:45px;
+        display: scroll;
+        position: fixed;
+        bottom: 15px;
+        right: 45px;
         img {
             scale: 0;
             width: 25px;
             height: 25px;
+        }
+    }
+    .link {
+        border-radius: 2px;
+        background-color: $green;
+        color: $white;
+        font-style: none;
+        font-weight: bolder;
+        padding: 4px 8px;
+        margin-right: 10px;
+        box-shadow: 1px 1px 2px $greyDark;
+    }
+    .link:hover {
+        background-color: $orange;
+        color: $white;
+        font-weight: bolder;
+    }
+    .note {
+        color: $orange;
+        font-weight: bolder;
+        strong {
+            color: $orangeDark;
         }
     }
     section {
@@ -68,18 +91,23 @@ $f-di: 'Droid Serif Italic';
                 }
             }
         }
-        iframe {
-            border: none;
-            padding-bottom: 20px;
-            width: 100%;
-            height: 438px;
-        }
-        .alignleft {
-            width: 120px;
-            height: 120px;
-        }
-        p {
-            text-align: justify;
+        .entry-content {
+            iframe {
+                border: none;
+                padding-bottom: 20px;
+                width: 100%;
+                height: 438px;
+            }
+            .alignleft {
+                max-width: 40%; // margin: 20px 0;
+            }
+            p {
+                text-align: justify;
+            }
+            h4 {
+                padding-top: 20px;
+                margin: 20px 0 -6px 0;
+            }
         }
         .presentation-infos {
             &__list {
@@ -93,8 +121,12 @@ $f-di: 'Droid Serif Italic';
                 &__sub-items {
                     list-style-type: none;
                     .sub-items {
-                        &__title, &__date, &__place, &__more, &__dot {
-                            display: inline; 
+                        &__title,
+                        &__date,
+                        &__place,
+                        &__more,
+                        &__dot {
+                            display: inline;
                             font-weight: bolder;
                             vertical-align: baseline;
                         }
@@ -103,40 +135,174 @@ $f-di: 'Droid Serif Italic';
                             text-transform: uppercase;
                             margin: 0 0 0 4px;
                             font-weight: 900;
-
                         }
-                        &__date, &__place {
+                        &__date,
+                        &__place {
                             color: $green;
                             font-size: 1.8rem;
-                        }
-                        &__more {
-                            a {
-                                border-radius: 2px;
-                                background-color: $green;
-                                color: $white;
-                                font-style: none;
-                                padding: 4px 8px;
-                                margin-right: 10px;
-                                box-shadow: 1px 1px 2px $greyDark;
-
-                            }
-
-                            a:hover {
-                                background-color: $orange;
-                                color: $white;
-                            }
-                        }
-                        &__dot {
-                            margin: 0 6px;
-                            color: $orange;
-                            font-size: 1.8rem;
-                        }
+                        } // &__more {
+                        //     a {
+                        //         border-radius: 2px;
+                        //         background-color: $green;
+                        //         color: $white;
+                        //         font-style: none;
+                        //         padding: 4px 8px;
+                        //         margin-right: 10px;
+                        //         box-shadow: 1px 1px 2px $greyDark;
+                        //     }
+                        //     a:hover {
+                        //         background-color: $orange;
+                        //         color: $white;
+                        //     }
+                    }
+                    &__dot {
+                        margin: 0 6px;
+                        color: $orange;
+                        font-size: 1.8rem;
                     }
                 }
             }
+        }    
+        * {
+            box-sizing: border-box;
+        }
+        .registration {
+            border-radius: 5px;
+            border: 1px solid $orangeDark;
+            padding: 20px;
+            margin-bottom: 60px;
+        
+            input[type=radio],
+            input[type=checkbox] {
+                vertical-align: middle;
+                margin: 0 10px 0 0;
+            }
+            input[type=text],
+            input[type=email],
+            select,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid $orange;
+                border-radius: 4px;
+                resize: vertical;
+                color: $orange;
+                text-transform: capitalize;
+            }
+
+            select {
+                background-color:$white;
+            }
+            label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+                color: $orangeDark;
+                font-family: $f-ssp;
+                font-weight: 900;
+                font-size: 1.5rem;
+            }
+            p {
+                margin: 20px auto;
+                padding: 10px;
+                color: $greyDark;
+                font-family: $f-ssp;
+                font-weight: 500;
+                font-size: 1.5rem;
+
+            }
+            p strong {
+                font-size: 1.5rem;
+                color: $green;
+                text-transform: uppercase;
+            }
+            input[type=submit] {
+                border-radius: 2px;
+                background-color: $green;
+                color: $white;
+                font-style: none;
+                font-weight: bolder;
+                padding: 4px 8px;
+                margin: 20px 10px 0 0;
+                box-shadow: 1px 1px 2px $greyDark;
+                border: none;
+                cursor: pointer;
+                font-size: 1.1em;
+                font-family: $f-ssp;
+                font-weight: bolder;
+            }
+            input[type=submit]:hover {
+                background-color: $orange;
+                color: $white;
+                font-weight: bolder;
+            }
+            .mandatory {
+                font-weight: bold;
+                color: $redPink;
+            }
+            .error {
+                margin: -10px 0 0 -4px;
+                font-size: 14px;
+                color: $redPink;
+                font-weight: bold;
+
+                        }
+            .col-30 {
+                float: left;
+                width: 30%;
+                margin-top: 6px;
+            }
+            .col-45 {
+                float: left;
+                width: 45%;
+                margin-top: 6px;
+            }
+            .col-65 {
+                float: left;
+                width: 65%;
+                margin-top: 6px;
+            }
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
     }
-    .hidden-sections {
+    .presentation-hidden {
         display: none;
     }
+    #presentation-contact {
+        display: block;
+    }
 }
+
+// fieldset {
+//     border: 1px solid $white;
+//     border-radius: 4px;
+//     margin: 20px 0;
+//     color: $greyDark;
+// }
+// fieldset label {
+// padding: 12px 12px 12px 0;
+// display: inline-block;
+// color: $white;
+// font-family: $f-ssp;
+// font-weight: 900;
+// font-size: 1.4rem;
+// color: $greyDark;
+// }
+// legend {
+//     color: $greyDark;
+//     font-family: $f-ssp;
+//     font-weight: 900;
+// }
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+// @media screen and (max-width: 600px) {
+//     .col-25,
+//     .col-75,
+//     input[type=submit] {
+//         width: 100%;
+//         margin-top: 0;
+// }

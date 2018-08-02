@@ -5,19 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>GEROMOUV&#039;</title>
+	{{-- mandatory for Laravel if not $errors --}}
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<title>
+		@yield('title')
+	</title>
 
-	<!-- fonts -->
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C300italic%2C400%2C400italic%2C600%7CDroid+Serif%3A400%2C400italic%7COswald%3A300%2C400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-	<!-- social network font icons -->
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.min.css' type='text/css' media='all'/>
+	{{-- sela theme --}}
+		{{-- social network font icons --}}
+		<link rel="stylesheet" id="genericons-css" href="http://www.geromouv.fr/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1" type="text/css" media="all">
+		{{-- favicon --}}
+		<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 	
-	<!-- wordpress sela style -->
-	<link rel='stylesheet' href='/css/style.css?ver=4.9.7' type='text/css' media='all' />
-	<!-- main style -->
+	{{-- main style --}}
 	<link rel='stylesheet' href='/css/app.css' type='text/css' media='all' />
-	<!-- favicon -->
-	<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 </head>
 
 <body class="page">
@@ -25,13 +26,10 @@
 
 		<header>
 			<nav id="site-navigation" class="main-navigation">
-				<!-- mobile navigation -->
+				<!-- button for mobile navigation -->
 				<button class="menu-toggle">Menu</button>
 				<div>
 					<ul>
-						<li class="current_page_item">
-							<a href="{{('home')}}">Retour</a>
-						</li>
 						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
@@ -81,8 +79,6 @@
 
 		@include('layouts.master')
 		<!-- .site-content -->
-
-
 		<footer class="site-footer">
 			<div class="social-links">
 				<ul>
@@ -108,6 +104,10 @@
 					</li>
 				</ul>
 			</div>
+			<div class="site-info">
+				<a href="http://geromouv-animations/protection-des-donnees" title="Protection des données personnelles">politique de protection des données personnelles</a>
+			</div>
+		<!-- .site-info -->
 		</footer>
 		<!-- .site-footer -->
 
@@ -115,7 +115,9 @@
 	<!-- .page -->
 
 	<!-- SCRIPTS -->
-	<script type='text/javascript' src='/js/app.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	@yield('js')
+	<script src="/js/app.js"></script>
 </body>
 
 </html>

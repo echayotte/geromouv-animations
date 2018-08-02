@@ -6,7 +6,6 @@
                     @yield('content')
                 </article>
                 <!-- .page-->
-                
             </div>
             <!-- .site-main -->
         </div>

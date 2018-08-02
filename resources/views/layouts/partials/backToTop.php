@@ -1,6 +1,6 @@
 <aside>
     <div>
-        <a href="" title="Revenir en haut de la page">
+        <a id="btt" href="" title="Revenir en haut de la page">
             <img src="http://wasi.fr/arrowupcx2.gif" />
         </a>
     </div>
