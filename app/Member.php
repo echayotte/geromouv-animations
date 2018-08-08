@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
+    // needed to format the date
     protected $dateFormat = 'Y-m-d';
     protected $dates = ['birthday'];
 
-    // with function Create:: of the controller. Authorize the column to be fillable 
+
+    // with Controller's function Create:: => Authorize the column to be fillable 
     protected $fillable = [
         
         //DB's column
@@ -27,12 +29,14 @@ class Member extends Model
         'pension_id',
     ];
 
-    // naming this function by the foreignkey without the id so Laravel can retrieve it without problem
+    // naming theses functions by their foreignkey without the id for Laravel's nomenclature
+    // relation one to many (inverse)
     public function mutual()
     {
         return $this->belongsTo('App\Mutual');
     }
 
+    // relation one to many (inverse)
     public function pension()
     {
         return $this->belongsTo('App\Pension');
