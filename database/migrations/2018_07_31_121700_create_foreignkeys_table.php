@@ -14,9 +14,15 @@ class CreateForeignkeysTable extends Migration
     public function up()
     {
         Schema::table('members', function (Blueprint $table) {
-            $table->foreign('mutuals_id')->references('id')->on('mutuals');
-            $table->foreign('pensions_id')->references('id')->on('pensions');
+            $table->foreign('mutual_id')->references('id')->on('mutuals');
+            $table->foreign('pension_id')->references('id')->on('pensions');
         });
+
+        Schema::table('activity_member', function (Blueprint $table) {
+            $table->foreign('activity_id')->references('id')->on('activities');
+            $table->foreign('member_id')->references('id')->on('members');
+        });
+
     }
 
     /**
