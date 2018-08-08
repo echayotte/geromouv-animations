@@ -23,7 +23,7 @@
         <br/> merci.
     </p>
     <p>
-        <a class="link" href="/inscription/create">Inscription</a>
+        <a class="link" href="/member/create">Inscription</a>
     </p>
 </div>
 </section>
