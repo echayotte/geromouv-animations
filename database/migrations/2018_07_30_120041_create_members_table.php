@@ -20,15 +20,15 @@ class CreateMembersTable extends Migration
             $table->date('birthday');
             $table->enum('gender', ['Femme', 'Homme']);
             $table->string('address');
-            $table->integer('zipcode', 5);
+            $table->integer('zipcode');
             $table->string('city', 100);
             $table->string('email')->unique();
             $table->string('phone', 10)->nullable();
             $table->string('cellphone', 10);
             //──── enlever quand on aura mis la publication pour les deux ──────────────────────
-            $table->unsignedInteger('mutuals_id');
-            $table->unsignedInteger('pensions_id');
-            $table->enum('ressortissantAG2R', ['oui', 'non'])->nullable()->index();
+            $table->unsignedInteger('mutual_id');
+            $table->unsignedInteger('pension_id');
+            $table->enum('ressortissantAG2R', ['oui', 'non'])->nullable();
             //──── complementary 1 selectionné par défaut ────────────────────────
             $table->timestamps();
         });
