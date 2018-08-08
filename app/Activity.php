@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mutual extends Model
+class Activity extends Model
 {
-    
+    //
 }
