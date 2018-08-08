@@ -1,3 +1,6 @@
+<?php
+use Illuminate\Support\Facades\Input;
+?>
 @extends('layouts.layout')
 
 @section('title')
@@ -16,9 +19,9 @@
         <div class="entry-content">
             <p>
                 Afin de profiter des animations de Géromouv' du Grand Cahors, veuillez vous inscrire à l'aide de ce formulaire.
-                <p>
+            <br>
                 <strong>À retourner dûment complété, Accompagné du certificat médical et du paiement</strong>
-                </p>
+            <p>
                 <ol>
                     <h5>Les étapes d'inscription :</h5>
                     <li>Le remplir en ligne</li>
@@ -37,7 +40,6 @@
     </section>
 
     <section>
-
         <div class="registration">
             <form action="{{ action('MemberController@store') }}" method="post">
                 @csrf
@@ -51,6 +53,7 @@
                         <a href="http://géromouv-animations/protection-des-donnees" title="Protection des données personnelles"> politique de protection des données personnelles</a>
                     </em>
                 </p>
+                {{-- lastname --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-lastname">Nom <span class="mandatory">*</span></label>
@@ -62,6 +65,7 @@
                         @endif
                     </div>
                 </div>
+                {{-- firstname --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-firstname">Prénom <span class="mandatory">*</span></label>
@@ -73,158 +77,212 @@
                         @endif
                     </div>
                 </div>
+                {{-- birthday --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="datepicker">Date de naissance <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="datepicker" name="member-birthday" placeholder="Votre date de naissance..">
+                        <input type="text" id="datepicker" name="member-birthday" placeholder="Votre date de naissance.." value="{{ old('member-birthday') }}">
                         @if($errors->has('member-birthday'))
-                            <p>{{ $errors->first('member-birthday') }}</p>
+                            <p class="error">{{ $errors->first('member-birthday') }}</p>
                         @endif
                     </div>
                 </div>
+                {{-- gender --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-gender">Sexe <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <label for="member-gender">Femme</label>
-                        <input type="radio" id="member-gender" name="member-gender" value="Femme" value="{{ old('member-gender') }}">
-
                         <label for="mmeber-gender">Homme</label>
-                        <input type="radio" id="member-gender" name="member-gender" value="Homme" value="{{ old('member-gender') }}">
+                        <input type="radio" id="member-gender" name="member-gender" value="Homme" @if(Input::old('member-gender')) checked @endif>
+                        
+                        <label for="member-gender">Femme</label>
+                        <input type="radio" id="member-gender" name="member-gender" value="Femme" @if(!Input::old('member-gender')) checked @endif>
+
+                        @if($errors->has('member-gender'))
+                            <p class="error")>{{ $errors->first('member-gender') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-gender'))
-                        <p class="error")>{{ $errors->first('member-gender') }}</p>
-                    @endif
                 </div>
+                {{-- address --}}
                 <div class="row">
                     <div class="col-30">
-                        <label for="member-address">Adresse <span class="mandatory" value="{{ old('member-address') }}">*</span></label>
+                        <label for="member-address">Adresse <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="member-address" name="member-address" placeholder="votre numéro et nom de rue..">
+                        <input type="text" id="member-address" name="member-address" placeholder="votre numéro et nom de rue.." value="{{ old('member-address') }}">
+                        @if($errors->has('member-address'))
+                            <p class="error")>{{ $errors->first('member-address') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-address'))
-                        <p class="error")>{{ $errors->first('member-address') }}</p>
-                    @endif
                 </div>
+                {{-- zipcode --}}
                 <div class="row">
                     <div class="col-30">
-                        <label for="member-zipcode">Code Postal <span class="mandatory" value="{{ old('member-zipcode') }}">*</span></label>
+                        <label for="member-zipcode">Code Postal <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="member-zipcode" name="member-zipcode" placeholder="votre code postal..">
+                        <input type="text" id="member-zipcode" name="member-zipcode" placeholder="votre code postal.." value="{{ old('member-zipcode') }}">
+                        @if($errors->has('member-zipcode'))
+                            <p class="error")>{{ $errors->first('member-zipcode') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-zipcode'))
-                        <p class="error")>{{ $errors->first('member-zipcode') }}</p>
-                    @endif
                 </div>
+                {{-- city --}}
                 <div class="row">
                     <div class="col-30">
-                        <label for="member-city">Ville <span class="mandatory" value="{{ old('member-city') }}">*</span></label>
+                        <label for="member-city">Ville <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="member-city" name="member-city" placeholder="votre ville..">
+                        <input type="text" id="member-city" name="member-city" placeholder="votre ville.." value="{{ old('member-city') }}">
+                        @if($errors->has('member-city'))
+                            <p class="error")>{{ $errors->first('member-city') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-city'))
-                        <p class="error")>{{ $errors->first('member-city') }}</p>
-                    @endif
                 </div>
+                {{-- email --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-email">Email <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="member-email" id="member-email" name="member-email" placeholder="votre email.." value="{{ old('member-email') }}">
+                        <input type="email" id="member-email" name="member-email" placeholder="votre email.." value="{{ old('member-email') }}">
+                        @if($errors->has('member-email'))
+                            <p class="error")>{{ $errors->first('member-email') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-email'))
-                        <p class="error")>{{ $errors->first('member-email') }}</p>
-                    @endif
                 </div>
+                {{-- phone --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-phone">N° de téléphone fixe</label>
                     </div>
                     <div class="col-65">
                         <input type="text" id="member-phone" name="member-phone" placeholder="votre numéro de fixe.." value="{{ old('member-phone') }}">
-                        {{-- <input type="tel" id="member-phone" name="member-phone" placeholder="votre numéro de fixe.. : 00 00 00 00 00" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /> --}}
                     </div>
-                    @if($errors->has('member-phone'))
-                        <p class="error")>{{ $errors->first('member-phone') }}</p>
-                    @endif
                 </div>
+                {{-- cellphone --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-cellphone">N° de téléphone portable <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
                         <input type="text" id="member-cellphone" name="member-cellphone" placeholder="votre numéro de portable.." value="{{ old('member-cellphone') }}">
-                        {{-- <input type="tel" id="cellphonecellphone" name="cellphonecellphone" placeholder="votre numéro de portable.. : 00 00 00 00 00" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /> --}}
+                        @if($errors->has('member-cellphone'))
+                            <p class="error")>{{ $errors->first('member-cellphone') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-cellphone'))
-                        <p class="error")>{{ $errors->first('member-cellphone') }}</p>
-                    @endif
                 </div>
+                {{-- mutual --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <select id="member-mutual" name="member-mutual" value="{{ old('member-mutual') }}">
+                        <select id="member-mutual" name="member-mutual">
                             <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
                             @foreach ($mutuals as $mutual)
-                                <option value="{{ $mutual->id }}">{{ $mutual->name }}</option>
+                            <option value="{{ $mutual->id }}">{{ $mutual->name }}</option>
                             @endforeach
                         </select>
-                    </div>
-                    @if($errors->has('member-mutual'))
+                        @if($errors->has('member-mutual'))
                         <p class="error")>{{ $errors->first('member-mutual') }}</p>
-                    @endif
+                        @endif
+                    </div>
                 </div>
+                        {{-- <select id="member-mutual" name="mutual"> --}}
+                            {{-- @if(isset($request) && (!$request->has('submit'))) --}}
+                            {{-- ou --}}
+                            {{-- @if(!Input::has('submit')) //
+                                 <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
+                                @foreach ($mutuals as $mutual)
+                                        <option value="{{ $mutual->id }}">{{ $mutual->name }}</option>
+                                @endforeach
+                            @else    
+                                @foreach ($mutuals as $mutual)
+                                    @if (Input::old('member-mutual') == "{{ $mutual->id }}")
+                                        <option value="{{ $mutual->id }}"selected>{{ $mutual->name }}</option>
+                                    @else
+                                        <option value="{{ $mutual->id }}">{{ $mutual->name }}</option>
+                                    @endif
+                                @endforeach
+                            @endif --}}
+                        {{-- </select> --}}
+                    
+                {{-- pension─ --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-pension">Caisse de Retraite <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <select id="member-pension" name="member-pension" value="{{ old('member-pension') }}">
+                        <select id="member-pension" name="member-pension">
                             <option value="" selected disabled>votre caisse de retraite..</option>
                             @foreach ($pensions as $pension)
-                                <option value="{{ $pension->id }}">{{ $pension->name }}</option>
+                                    <option value="{{ $pension->id }}">{{ $pension->name }}</option>
                             @endforeach
                         </select>
+                        @if($errors->has('member-pension'))
+                            <p class="error")>{{ $errors->first('member-pension') }}</p>
+                        @endif
                     </div>
-                    @if($errors->has('member-pension'))
-                        <p class="error")>{{ $errors->first('member-pension') }}</p>
-                    @endif
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-30">
-                        <label for="activities">Activités choisies <span class="mandatory">*</span></label>
+                        <label for="member-pension">Caisse de Retraite <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="checkbox" id="gym-douce" name="mem-gender">
+                        <select id="member-pension" name="member-pension">
+                            
+                            @if(!isset($request))
+                                <option value="" selected disabled>votre caisse de retraite..</option>
+                                @foreach ($pensions as $pension)
+                                        <option value="{{ $pension->id }}">{{ $pension->name }}</option>
+                                @endforeach
+                            @else    
+                                @foreach ($pensions as $pension)
+                                    @if (Input::old('member-pension') == "{{ $pension->id }}")
+                                        <option value="{{ $pension->id }}"selected>{{ $pension->name }}</option>
+                                    @else
+                                        <option value="{{ $pension->id }}">{{ $pension->name }}</option>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </select>
+                        @if($errors->has('member-pension'))
+                            <p class="error")>{{ $errors->first('member-pension') }}</p>
+                        @endif
+                    </div>
+                </div> --}}
+                
+                {{-- activities  --}}
+                {{-- <div class="row">
+                    <div class="col-30">
+                        <label for="member-activities">Activités choisies <span class="mandatory">*</span></label>
+                    </div>
+                    <div class="col-65">
+                        <input type="checkbox" id="gym-douce" name="member-activities[]" value="gym douce">
                         <label for="gym-douce">Gym douce ludique</label>
                         <br>
-                        <input type="checkbox" id="pilates" name="mem-gender">
+                        <input type="checkbox" id="pilates" name="member-activities[]" value="pîlates">
                         <label for="pilates">Gym Pilâtes</label>
                         <br>
-                        <input type="checkbox" id="marche-douce" name="mem-gender">
+                        <input type="checkbox" id="marche-douce" name="member-activities[]" value="marche douce">
                         <label for="marche-douce">Marche douce avec bâtons</label>
                         <br>
-                        <input type="checkbox" id="marche-nordique-douce" name="mem-gender">
+                        <input type="checkbox" id="marche-nordique-douce" name="member-activities[]" value="marche nordique douce">
                         <label for="marche-nordique-douce">Marche Nordique douce</label>
                         <br>
-                        <input type="checkbox" id="marche-nordique-active" name="mem-gender">
+                        <input type="checkbox" id="marche-nordique-active" name="member-activities[]" value="marche nordique active">
                         <label for="marche-nordique-active">Marche Nordique active</label>
                     </div>
-                    @if($errors->has('member-'))
-                        <p class="error")>{{ $errors->first('member-') }}</p>
-                    @endif
-                </div>
+                </div> --}}
+                    {{-- @if($errors->has('member-activities'))
+                        <p class="error")>{{ $errors->first('member-activities') }}</p>
+                    @endif --}}
                 <div>
-                    <input type="submit" id="submit" value="Envoyer">
+                    <input type="submit" id="submit" value="Envoyer" name="submit">
                 </div>
             </form>
         </div>
