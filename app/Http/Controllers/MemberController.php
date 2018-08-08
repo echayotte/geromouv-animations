@@ -53,6 +53,7 @@ class MemberController extends Controller
         request()->validate([
 
             //Form's type=name
+            // 'member-lastname' => ['required', 'string'],
             'member-lastname'  => 'required | string',
             'member-firstname' => 'required | string',
             'member-birthday'  => 'required',
@@ -64,7 +65,7 @@ class MemberController extends Controller
             // 'member-phone'     => 'string',
             'member-cellphone' => 'required | string',
             'member-mutual'    => 'required | integer',
-            'member-pension'   => 'required | integer',
+            'member-pension'   => 'required | integer'
         ]);
             
         $member = Member::create([
