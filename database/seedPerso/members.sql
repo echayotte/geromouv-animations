@@ -1,0 +1,4 @@
+INSERT INTO `members` (`id`, `lastname`, `firstname`, `birthday`, `gender`, `address`, `zipcode`, `city`, `email`, `phone`, `cellphone`, `mutual_id`, `pension_id`, `created_at`, `updated_at`) VALUES
+(NULL, 'wieber', 'charlotte', '1976-04-24', 'Femme', '8 rue Saulpic', '94300', 'Vincennes', 'echayotte@gmail.com', '0143281065', '0682052485', '4', '20', '2018-08-02 00:00:00', '2018-08-02 00:00:00'),
+(NULL, 'wieber', 'jacueq', '1948-04-02', 'Homme', '45 rue Robert Giraudineau', '94300', 'Vincennes', 'jacqueswieber@gmail.com', '0143650541', '0607268259', '9', '3', '2018-08-02 00:00:00', '2018-08-02 00:00:00'),
+(NULL, 'boyaval', 'éric', '1969-04-19', 'Homme', 'chemin de l\'églide', '7000', 'Rochefort-Samson', 'eric@gmail.com', '0907086534', '0678254365', '1', '19', '2018-08-02 00:00:00', '2018-08-02 00:00:00');
