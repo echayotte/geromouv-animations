@@ -28,7 +28,7 @@ class CreateMembersTable extends Migration
             //──── enlever quand on aura mis la publication pour les deux ──────────────────────
             $table->unsignedInteger('mutual_id');
             $table->unsignedInteger('pension_id');
-            $table->enum('ressortissantAG2R', ['oui', 'non'])->nullable();
+            $table->enum('ag2r', ['oui', 'non'])->nullable();
             //──── complementary 1 selectionné par défaut ────────────────────────
             $table->timestamps();
         });
