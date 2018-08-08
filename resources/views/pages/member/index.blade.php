@@ -8,8 +8,9 @@
 
     <ul>
         @foreach ($members as $member)
-            <li>{{ $member->mem_first_name}} {{ $member->mem_last_name}}</li>
-            <li>{{ $member->mem_date_of_birth}} {{ $member->mem_city}}</li>
+            <li>{{ $member->firstname}} {{ $member->lastname}}</li>
+            <li>{{ $member->birthday}} {{ $member->city}}</li>
+            <li>{{ $member->mutual->name}} {{ $member->pension->name}}</li>
         @endforeach
     </ul>
 
