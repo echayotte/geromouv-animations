@@ -19,6 +19,7 @@
 	
 	{{-- main style --}}
 	<link rel='stylesheet' href='/css/app.css' type='text/css' media='all' />
+	@yield('css')
 </head>
 
 <body class="page">
