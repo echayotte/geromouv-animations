@@ -23,8 +23,8 @@ class CreateMembersTable extends Migration
             $table->integer('zipcode');
             $table->string('city', 100);
             $table->string('email')->unique();
-            $table->string('phone', 10)->nullable();
-            $table->string('cellphone', 10);
+            $table->string('primaryphone', 10);
+            $table->string('secondaryphone', 10)->nullable();
             //──── enlever quand on aura mis la publication pour les deux ──────────────────────
             $table->unsignedInteger('mutual_id');
             $table->unsignedInteger('pension_id');
