@@ -23,8 +23,7 @@ class Member extends Model
         'zipcode',
         'city',
         'email',
-        // 'phone',
-        'cellphone',
+        'primaryphone',
         'mutual_id',
         'pension_id',
     ];
@@ -42,5 +41,9 @@ class Member extends Model
         return $this->belongsTo('App\Pension');
     }
     
-    
+    // relation many to many (with pivot table activity_member)
+    public function activities()
+    {
+        return $this->belongsToMany('App\Activity');
+    }
 }
