@@ -154,25 +154,25 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
-                {{-- phone --}}
+                {{-- primaryphone --}}
                 <div class="row">
                     <div class="col-30">
-                        <label for="member-phone">N° de téléphone fixe</label>
+                        <label for="member-primaryphone">N° de téléphone principal <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="member-phone" name="member-phone" placeholder="votre numéro de fixe.." value="{{ old('member-phone') }}">
+                        <input type="text" id="member-primaryphone" name="member-primaryphone" placeholder="votre numéro principal.." value="{{ old('member-primaryphone') }}">
+                        @if($errors->has('member-primaryphone'))
+                            <p class="error")>{{ $errors->first('member-primaryphone') }}</p>
+                        @endif
                     </div>
                 </div>
-                {{-- cellphone --}}
+                {{-- secondaryphone --}}
                 <div class="row">
                     <div class="col-30">
-                        <label for="member-cellphone">N° de téléphone portable <span class="mandatory">*</span></label>
+                        <label for="member-secondaryphone">N° de téléphone secondaire</label>
                     </div>
                     <div class="col-65">
-                        <input type="text" id="member-cellphone" name="member-cellphone" placeholder="votre numéro de portable.." value="{{ old('member-cellphone') }}">
-                        @if($errors->has('member-cellphone'))
-                            <p class="error")>{{ $errors->first('member-cellphone') }}</p>
-                        @endif
+                        <input type="text" id="member-secondaryphone" name="member-secondaryphone" placeholder="votre numéro secondaire.." value="{{ old('member-secondaryphone') }}">
                     </div>
                 </div>
                 {{-- mutual --}}
@@ -257,30 +257,49 @@ use Illuminate\Support\Facades\Input;
                 </div> --}}
                 
                 {{-- activities  --}}
+                <div class="row">
+                    <div class="col-30">
+                        <label>Activités choisies <span class="mandatory">*</span></label>
+                    </div>
+                    <div class="col-65">
+                        @foreach ($activities as $activity)
+                            <label>
+                                <input type="checkbox" name="member-activities[]" value="{{$activity->id}}">{{$activity->name}}
+                            </label>
+                            <br>
+                            @if($errors->has('member-activities'))
+                                <p class="error")>{{ $errors->first('member-activities') }}</p>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                
+                
                 {{-- <div class="row">
                     <div class="col-30">
                         <label for="member-activities">Activités choisies <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
-                        <input type="checkbox" id="gym-douce" name="member-activities[]" value="gym douce">
+                        <input type="checkbox" id="gym-douce" name="member-activities[]" value="1">
                         <label for="gym-douce">Gym douce ludique</label>
                         <br>
-                        <input type="checkbox" id="pilates" name="member-activities[]" value="pîlates">
-                        <label for="pilates">Gym Pilâtes</label>
+                        <input type="checkbox" id="pilates" name="member-activities[]" value="2">
+                        <label for="pilates">Gym Pilates</label>
                         <br>
-                        <input type="checkbox" id="marche-douce" name="member-activities[]" value="marche douce">
+                        <input type="checkbox" id="marche-douce" name="member-activities[]" value="3">
                         <label for="marche-douce">Marche douce avec bâtons</label>
                         <br>
-                        <input type="checkbox" id="marche-nordique-douce" name="member-activities[]" value="marche nordique douce">
+                        <input type="checkbox" id="marche-nordique-douce" name="member-activities[]" value="4">
                         <label for="marche-nordique-douce">Marche Nordique douce</label>
                         <br>
-                        <input type="checkbox" id="marche-nordique-active" name="member-activities[]" value="marche nordique active">
+                        <input type="checkbox" id="marche-nordique-active" name="member-activities[]" value="5">
                         <label for="marche-nordique-active">Marche Nordique active</label>
+                        
+                        @if($errors->has('member-activities'))
+                            <p class="error")>{{ $errors->first('member-activities') }}</p>
+                        @endif
                     </div>
                 </div> --}}
-                    {{-- @if($errors->has('member-activities'))
-                        <p class="error")>{{ $errors->first('member-activities') }}</p>
-                    @endif --}}
                 <div>
                     <input type="submit" id="submit" value="Envoyer" name="submit">
                 </div>
