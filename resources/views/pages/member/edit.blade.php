@@ -41,9 +41,9 @@ use Illuminate\Support\Facades\Input;
 
     <section>
         <div class="registration">
-            <form action="{{ action('MemberController@update', $member->id) }}" method="post">
+            <form action="{{ action('MemberController@update', $member->id) }}" method="POST">
                 @csrf
-                @method('put')
+                @method('PUT')
                 <p>
                     <strong>
                         Les champs marqués avec un astérisque <span class="mandatory">*</span> sont <span class="mandatory">obligatoires</span>
