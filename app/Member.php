@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    // needed to format the date
-    protected $dateFormat = 'Y-m-d';
+    // needed to format the date first but then it didn't permit to update a member so commented
+    // protected $dateFormat = 'Y-m-d';
     protected $dates = ['birthday'];
-
-
+    
     // with Controller's function Create:: => Authorize the column to be fillable 
     protected $fillable = [
-        
-        //DB's column
+        //DB's column   
         'lastname',
         'firstname',
         'birthday',
