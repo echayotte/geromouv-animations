@@ -12,3 +12,5 @@ Route::resource('/member', 'MemberController');
 //     'photos' => 'PhotoController',
 //     'posts' => 'PostController'
 // ]);
+
+Route::resource('/file', 'FileController');
