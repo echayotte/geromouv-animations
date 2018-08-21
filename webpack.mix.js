@@ -14,8 +14,8 @@ mix.js('resources/assets/js/**/*.js', 'public/js')
             }
         },
         browser: [
-            'firefox',
-            'google chrome'
+            'firefox'
+            // 'google chrome'
         ],
         files: [
             'resources/views/**/*.php',
