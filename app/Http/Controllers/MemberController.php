@@ -39,7 +39,14 @@ class MemberController extends Controller
         $mutuals = Mutual::all();
         $activities = Activity::all();
 
-        return View('pages.member.create', compact('pensions', 'mutuals', 'activities'));
+        return View(
+            'pages.member.create',
+            compact(
+                'pensions',
+                'mutuals',
+                'activities'
+            )
+        );
     }
     
     /**
