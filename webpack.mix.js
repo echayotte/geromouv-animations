@@ -4,6 +4,7 @@ let mix = require('laravel-mix')
 mix.js('resources/assets/js/**/*.js', 'public/js')
     .sourceMaps()
     .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/print.scss', 'public/css')
     .browserSync({
         proxy: {
             target: 'localhost:8000',
