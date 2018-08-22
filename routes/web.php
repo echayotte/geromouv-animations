@@ -1,6 +1,7 @@
 <?php
 
 Route::view('/', 'home');
+Route::view('/test/bem', 'pages.test.bem');
 
 Route::get('/presentation', 'PresentationController@show');
 
