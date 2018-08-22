@@ -13,7 +13,10 @@
 
 	{{-- sela theme --}}
 		{{-- social network font icons --}}
-		<link rel="stylesheet" id="genericons-css" href="http://www.geromouv.fr/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1" type="text/css" media="all">
+		<link rel="stylesheet" id="genericons-css" 
+		href="https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.css"
+		{{-- href="http://www.geromouv.fr/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1"  --}}
+		type="text/css" media="all">
 		{{-- favicon --}}
 		<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 	
@@ -57,7 +60,8 @@
 							<a href="">Animations</a>
 							<ul class="sub-menu">
 								<li>
-									<a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a>
+									<a href="{{url('presentation')}}">Présentation et Inscription</a>
+									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
 								</li>
 								<li>
 									<a href="http://geromouv-animations/event/">Planning</a>
