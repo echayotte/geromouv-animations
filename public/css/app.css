@@ -2256,6 +2256,69 @@ a.ui-button:active,
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+button {
+  text-transform: capitalize;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  vertical-align: baseline;
+  background-color: #85961e;
+  color: #ffffff;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 2px #404040;
+          box-shadow: 1px 1px 2px #404040;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.btn--white {
+  background-color: #ffffff;
+  color: #f18500;
+}
+
+.btn--orange {
+  background-color: #f18500;
+  color: #ffffff;
+}
+
+.btn--green {
+  background-color: #85961e;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #f18500;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.btn--white:hover {
+  background-color: #85961e;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.btn--orange:hover {
+  background-color: #d44300;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.btn--green:hover {
+  background-color: #3e4705;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
 .main-content aside div a {
   display: scroll;
   position: fixed;
@@ -2269,24 +2332,6 @@ a.ui-button:active,
   height: 25px;
 }
 
-.main-content .link {
-  border-radius: 2px;
-  background-color: #85961e;
-  color: #ffffff;
-  font-style: none;
-  font-weight: bolder;
-  padding: 4px 8px;
-  margin-right: 10px;
-  -webkit-box-shadow: 1px 1px 2px #404040;
-          box-shadow: 1px 1px 2px #404040;
-}
-
-.main-content .link:hover {
-  background-color: #f18500;
-  color: #ffffff;
-  font-weight: bolder;
-}
-
 .main-content .note {
   color: #f18500;
   font-weight: bolder;
@@ -2296,7 +2341,12 @@ a.ui-button:active,
   color: #ff6600;
 }
 
-.main-content section .cards {
+.main-content section * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main-content section .entry-content .cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2309,22 +2359,26 @@ a.ui-button:active,
           justify-content: space-between;
 }
 
-.main-content section .cards__card {
+.main-content section .entry-content .cards__card {
   position: relative;
   overflow: hidden;
 }
 
-.main-content section .cards .card {
+.main-content section .entry-content .cards .card {
   width: 32%;
   height: 166px;
 }
 
-.main-content section .cards .card__body {
+.main-content section .entry-content .cards .card__body {
   padding: 1em;
   top: 100%;
 }
 
-.main-content section .cards .card:hover .card__body {
+.main-content section .entry-content .cards .card__body button {
+  margin-left: 100px;
+}
+
+.main-content section .entry-content .cards .card:hover .card__body {
   position: absolute;
   top: 50px;
   background: #ff6600;
@@ -2336,28 +2390,64 @@ a.ui-button:active,
   margin: 0;
 }
 
-.main-content section .cards .card:hover .card__body h3 {
+.main-content section .entry-content .cards .card:hover .card__body h3 {
   font-weight: bolder;
   text-align: left;
   color: #ffffff;
 }
 
-.main-content section .cards .card:hover .card__body a {
-  border-radius: 2px;
-  background-color: #ffffff;
-  font-style: none;
-  color: #f18500;
-  padding: 4px 8px;
-  margin-left: 110px;
-  font-weight: bolder;
-  -webkit-box-shadow: 1px 1px 2px #404040;
-          box-shadow: 1px 1px 2px #404040;
+.main-content section .entry-content .list {
+  list-style-type: none;
+  margin-left: -14px;
 }
 
-.main-content section .cards .card:hover .card__body a:hover {
+.main-content section .entry-content .list__items {
+  padding-bottom: 24px;
+}
+
+.main-content section .entry-content .list .items__sub-items {
+  list-style-type: none;
+}
+
+.main-content section .entry-content .list .items__sub-items .sub-items__title,
+.main-content section .entry-content .list .items__sub-items .sub-items__date,
+.main-content section .entry-content .list .items__sub-items .sub-items__place,
+.main-content section .entry-content .list .items__sub-items .sub-items__more,
+.main-content section .entry-content .list .items__sub-items .sub-items__dot {
+  display: inline;
   font-weight: bolder;
-  background-color: #85961e;
-  color: #ffffff;
+  vertical-align: baseline;
+}
+
+.main-content section .entry-content .list .items__sub-items .sub-items__title {
+  color: #ff6600;
+  text-transform: uppercase;
+  margin: 0 0 0 4px;
+  font-weight: 900;
+}
+
+.main-content section .entry-content .list .items__sub-items .sub-items__date,
+.main-content section .entry-content .list .items__sub-items .sub-items__place {
+  color: #85961e;
+  font-size: 1.8rem;
+}
+
+.main-content section .entry-content .list .items__sub-items .sub-items__text {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  color: #404040;
+}
+
+.main-content section .entry-content .list .items__sub-items .sub-items__text span {
+  color: #85961e;
+  font-size: 1.8rem;
+  margin: 0 6px;
+}
+
+.main-content section .entry-content .list .items__sub-items__dot {
+  margin: 0 6px;
+  color: #f18500;
+  font-size: 1.8rem;
 }
 
 .main-content section .entry-content iframe {
@@ -2380,54 +2470,7 @@ a.ui-button:active,
   margin: 20px 0 -6px 0;
 }
 
-.main-content section .presentation-infos__list {
-  list-style-type: none;
-  margin-left: -14px;
-}
-
-.main-content section .presentation-infos__items {
-  padding-bottom: 24px;
-}
-
-.main-content section .presentation-infos .items__sub-items {
-  list-style-type: none;
-}
-
-.main-content section .presentation-infos .items__sub-items .sub-items__title,
-.main-content section .presentation-infos .items__sub-items .sub-items__date,
-.main-content section .presentation-infos .items__sub-items .sub-items__place,
-.main-content section .presentation-infos .items__sub-items .sub-items__more,
-.main-content section .presentation-infos .items__sub-items .sub-items__dot {
-  display: inline;
-  font-weight: bolder;
-  vertical-align: baseline;
-}
-
-.main-content section .presentation-infos .items__sub-items .sub-items__title {
-  color: #ff6600;
-  text-transform: uppercase;
-  margin: 0 0 0 4px;
-  font-weight: 900;
-}
-
-.main-content section .presentation-infos .items__sub-items .sub-items__date,
-.main-content section .presentation-infos .items__sub-items .sub-items__place {
-  color: #85961e;
-  font-size: 1.8rem;
-}
-
-.main-content section .presentation-infos .items__sub-items__dot {
-  margin: 0 6px;
-  color: #f18500;
-  font-size: 1.8rem;
-}
-
-.main-content section * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.main-content section .registration {
+.main-content section .registration-form {
   border-radius: 5px;
   border: 1px solid #ff6600;
   padding: 20px;
@@ -2435,16 +2478,16 @@ a.ui-button:active,
   /* Clear floats after the columns */
 }
 
-.main-content section .registration input[type=radio],
-.main-content section .registration input[type=checkbox] {
+.main-content section .registration-form input[type=radio],
+.main-content section .registration-form input[type=checkbox] {
   vertical-align: middle;
   margin: 0 10px 0 0;
 }
 
-.main-content section .registration input[type=text],
-.main-content section .registration input[type=email],
-.main-content section .registration select,
-.main-content section .registration textarea {
+.main-content section .registration-form input[type=text],
+.main-content section .registration-form input[type=email],
+.main-content section .registration-form select,
+.main-content section .registration-form textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #f18500;
@@ -2454,11 +2497,11 @@ a.ui-button:active,
   text-transform: capitalize;
 }
 
-.main-content section .registration select {
+.main-content section .registration-form select {
   background-color: #ffffff;
 }
 
-.main-content section .registration label {
+.main-content section .registration-form label {
   padding: 12px 12px 12px 0;
   display: inline-block;
   color: #ff6600;
@@ -2467,7 +2510,7 @@ a.ui-button:active,
   font-size: 1.5rem;
 }
 
-.main-content section .registration p {
+.main-content section .registration-form p {
   margin: 20px auto;
   padding: 10px;
   color: #404040;
@@ -2476,69 +2519,51 @@ a.ui-button:active,
   font-size: 1.5rem;
 }
 
-.main-content section .registration p strong {
+.main-content section .registration-form p strong {
   font-size: 1.5rem;
   color: #85961e;
   text-transform: uppercase;
 }
 
-.main-content section .registration input[type=submit] {
-  border-radius: 2px;
-  background-color: #85961e;
-  color: #ffffff;
-  font-style: none;
-  font-weight: bolder;
-  padding: 4px 8px;
-  margin: 20px 10px 0 0;
-  -webkit-box-shadow: 1px 1px 2px #404040;
-          box-shadow: 1px 1px 2px #404040;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1em;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: bolder;
-}
-
-.main-content section .registration input[type=submit]:hover {
-  background-color: #f18500;
-  color: #ffffff;
-  font-weight: bolder;
-}
-
-.main-content section .registration .mandatory {
+.main-content section .registration-form .mandatory {
   font-weight: bold;
   color: #e1122a;
 }
 
-.main-content section .registration .error {
+.main-content section .registration-form .error {
   margin: -10px 0 0 -4px;
   font-size: 14px;
   color: #e1122a;
   font-weight: bold;
 }
 
-.main-content section .registration .col-30 {
+.main-content section .registration-form .col-30 {
   float: left;
   width: 30%;
   margin-top: 6px;
 }
 
-.main-content section .registration .col-45 {
+.main-content section .registration-form .col-45 {
   float: left;
   width: 45%;
   margin-top: 6px;
 }
 
-.main-content section .registration .col-65 {
+.main-content section .registration-form .col-65 {
   float: left;
   width: 65%;
   margin-top: 6px;
 }
 
-.main-content section .registration .row:after {
+.main-content section .registration-form .row:after {
   content: "";
   display: table;
   clear: both;
+}
+
+.main-content section .validation-form {
+  padding: 20px;
+  margin-bottom: 60px;
 }
 
 .main-content .presentation-hidden {
@@ -2548,6 +2573,4 @@ a.ui-button:active,
 .main-content #presentation-contact {
   display: block;
 }
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
