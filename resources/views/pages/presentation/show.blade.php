@@ -24,7 +24,7 @@
                     <img class="card__img" src="/storage/images/pages/presentation/seances.jpg">
                     <div class="card__body">
                         <h3>Séances d'activités</h3>
-                        <a href="#" id="btn-seances">Présentation</a>
+                        <button class="btn btn--white" id="btn-seances">Présentation</button>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     <img class="card__img" src="/storage/images/pages/presentation/stages.jpg">
                     <div class="card__body">
                         <h3>Stages</h3>
-                        <a href="#" id="btn-stages">Présentation</a>
+                        <button class="btn btn--white" id="btn-stages">Présentation</button>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <img class="card__img" src="/storage/images/pages/presentation/events.jpg">
                     <div class="card__body">
                         <h3>Événements</h3>
-                        <a href="#" id="btn-events">Présentation</a>
+                        <button class="btn btn--white" id="btn-events">Présentation</button>
                     </div>
                 </div>
             </div>

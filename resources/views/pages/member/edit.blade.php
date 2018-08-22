@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Input;
     </section>
 
     <section>
-        <div class="registration">
+        <div class="registration-form">
             <form action="{{ action('MemberController@update', $member->id) }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -239,7 +239,7 @@ use Illuminate\Support\Facades\Input;
                 </div>
                 
                 <div>
-                    <input type="submit" id="submit" value="Envoyer" name="submit">
+                    <input class="btn" type="submit" id="submit" value="Envoyer" name="submit">
                 </div>
             </form>
         </div>

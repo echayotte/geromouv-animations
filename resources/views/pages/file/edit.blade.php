@@ -4,7 +4,7 @@
 @section('content')
 <div class="main-content">
     <section>
-        <div class="registration">
+        <div class="registration-form">
             <form action="{{ action('FileController@update', $file->id) }}" method="POST">
                 @csrf
                 @method('PUT')
