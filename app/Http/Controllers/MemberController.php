@@ -33,20 +33,13 @@ class MemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
     {
         $pensions = Pension::all();
         $mutuals = Mutual::all();
         $activities = Activity::all();
 
-        return View(
-            'pages.member.create',
-            compact(
-                'pensions',
-                'mutuals',
-                'activities'
-            )
-        );
+        // return the view and pass the 3 variables to the view
+        return View('pages.member.create',compact('pensions','mutuals','activities'));
     }
     
     /**
@@ -57,8 +50,9 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
+        // verify with options the inputs before storing
         request()->validate([
-            //Form's type=name
+            // form's type="name"
             'member-lastname' => 'required | string',
             'member-firstname' => 'required | string',
             'member-birthday' => 'required',
@@ -75,10 +69,10 @@ class MemberController extends Controller
             
         // create a new member and save it in the db
         $member = Member::create([
-            //DB column => form's type=name
+            // db column => requets(form's type="name")
             'lastname' => request('member-lastname'),
             'firstname' => request('member-firstname'),
-            //with this put protected $dates in the Model
+            // with this put protected $dates in the Member's Model to work
             'birthday' => Carbon::createFromFormat('d/m/Y', request('member-birthday'))->format('Y-m-d'),
             'gender' => request('member-gender'),
             'address' => request('member-address'),
@@ -91,13 +85,16 @@ class MemberController extends Controller
             'pension_id' => request('member-pension')
             ]);
 
-        // store checkboxes in the pivot table activity_member
+        /* store checkboxes in the pivot table 'activity_member'
+        *   with function activities() from Member's Model.
+        *   sync means delete all in the table and recreate it
+        */
         $member->activities()->sync($request->get('member-activities'));
 
         Session::flash('status', 'Vos informations ont bien été enregistrées dans la base de données!');
-        // redirect to => /member/{id} because Laravel nows it need to search the id in the members' table
+        // redirect to => /member/{id}
+        // Laravel eloquent nows it need to search the id in the members' table with $member
         return Redirect::route('member.show', $member);
-        // return Redirect::route('member.show', $member)->with('status', 'Vos informations ont bien été enregistrées dans la base de données!');
     }
 
     /**
@@ -109,8 +106,8 @@ class MemberController extends Controller
     public function show(Member $member)
     {
         $formatDate = Carbon::parse($member->birthday)->format('d/m/Y');
-         // return the view and pass the variables $member and $formatDate
-        return view('pages.member.show', compact('member','formatDate'));
+        
+        return view('pages.member.show',compact('member','formatDate'));
     }
 
     /**
@@ -136,11 +133,9 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, Member $member)
     {
         request()->validate([
-            //Form's type=name
             'member-lastname'=> 'required | string',
             'member-firstname'=> 'required | string',
             'member-birthday'=> 'required',
@@ -155,46 +150,25 @@ class MemberController extends Controller
             'member-activities'=> 'required'
         ]);
 
+        // update the member's inputs and save them in the db
         $member->update([
-        'lastname' => request('member-lastname'),
-        'firstname' => request('member-firstname'),
-        'gender' => request('member-gender'),
-        'birthday' => Carbon::createFromFormat('d/m/Y', request('member-birthday'))->format('Y-m-d'),
-        'address' => request('member-address'),
-        'zipcode' => request('member-zipcode'),
-        'city' => request('member-city'),
-        'email' => request('member-email'),
-        'primaryphone' => request('member-primaryphone'),
-        'secondaryphone' => request('member-secondaryphone'),
-        'mutual_id' => request('member-mutual'),
-        'pension_id' => request('member-pension')
+            'lastname' => request('member-lastname'),
+            'firstname' => request('member-firstname'),
+            'gender' => request('member-gender'),
+            'birthday' => Carbon::createFromFormat('d/m/Y', request('member-birthday'))->format('Y-m-d'),
+            'address' => request('member-address'),
+            'zipcode' => request('member-zipcode'),
+            'city' => request('member-city'),
+            'email' => request('member-email'),
+            'primaryphone' => request('member-primaryphone'),
+            'secondaryphone' => request('member-secondaryphone'),
+            'mutual_id' => request('member-mutual'),
+            'pension_id' => request('member-pension')
         ]);
-
-
-
-        // $member->lastname = request('member-lastname');
-        // $member->firstname = request('member-firstname');
-        // $member->gender = request('member-gender');
-        // $member->birthday = Carbon::createFromFormat('d/m/Y', request('member-birthday'))->format('Y-m-d');
-        // $member->address = request('member-address');
-        // $member->zipcode = request('member-zipcode');
-        // $member->city = request('member-city');
-        // $member->email = request('member-email');
-        // $member->primaryphone = request('member-primaryphone');
-        // $member->secondaryphone = request('member-secondaryphone');
-        // $member->mutual_id = request('member-mutual');
-        // $member->pension_id = request('member-pension');
-        // // store checkboxes in the pivot table activity_member
-        // $member->activities()->sync($request->get('member-activities'));
-
-
-        //  $member->save();
+        $member->activities()->sync($request->get('member-activities'));
 
         Session::flash('status', 'Vos informations ont bien été modifiées dans la base de données!');
-        // redirect to => /member/{id} because Laravel nows it need to search the id in the members table
         return Redirect::route('member.show', $member);
-        // return Redirect::route('member.show', $member)->with('status', 'Vos informations ont bien été enregistrées dans la base de données!');
-
     }
 
     /**
