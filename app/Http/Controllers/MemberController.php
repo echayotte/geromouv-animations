@@ -66,7 +66,7 @@ class MemberController extends Controller
             'member-pension' => 'required | integer',
             'member-activities' => 'required'
         ]);
-            
+
         // create a new member and save it in the db
         $member = Member::create([
             // db column => requets(form's type="name")

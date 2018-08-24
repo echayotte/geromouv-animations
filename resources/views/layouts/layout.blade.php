@@ -21,7 +21,8 @@
 		<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 	
 	{{-- main style --}}
-	<link rel='stylesheet' href='/css/app.css' type='text/css' media='all' />
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
+	{{-- <link rel='stylesheet' href='/css/app.css' type='text/css' media='all' /> --}}
 	@yield('css')
 </head>
 
@@ -64,6 +65,10 @@
 									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
 								</li>
 								<li>
+									<a href="{{url('pages.animation')}}">Animation</a>
+									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
+								</li>
+								<li>
 									<a href="http://geromouv-animations/event/">Planning</a>
 								</li>
 							</ul>
@@ -75,6 +80,22 @@
 							<a target="_blank" href="http://geromouv.fr/contact/">Contact</a>
 						</li>
 					</ul>
+
+					@yield('auth')
+					{{-- @section('auth') --}}
+					<div class="top-right links">
+						@if (Route::has('login'))
+						@auth
+						<a href="{{ route('logout') }}"
+							onclick="event.preventDefault();document.getElementById('logout-form').submit();">Déconnexion</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							@csrf
+						</form>
+						@endauth
+						@endif
+					</div>
+					{{-- @endsection --}}
+					
 				</div>
 			</nav>
 			<!-- #site-navigation -->
