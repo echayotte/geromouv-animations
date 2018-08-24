@@ -1,7 +1,13 @@
-<ul>
-    <li><a href="/presentation">presentation</a></li>
-    <li><a href="/member/create">formulaire</a></li>
-    <li><a href="/test/bem">BEM</a></li>
-    <li><a href="">item</a></li>
-    <li><a href="">item</a></li>
-</ul>
+@extends('layouts.layout')
+@extends('layouts.app')
+
+@section('content')
+<div class="card-body">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
+    <p>Vous êtes connectée !</p>
+</div>
+@endsection
