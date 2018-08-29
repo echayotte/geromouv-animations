@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnimationsTable extends Migration
+class CreatePlanningAnimationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateAnimationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('animations', function (Blueprint $table) {
+        Schema::create('planning_animations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('title');
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->boolean('is_all_day');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateAnimationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animations');
+        Schema::dropIfExists('planning_animations');
     }
 }
