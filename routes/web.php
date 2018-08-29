@@ -6,7 +6,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::view('/', 'pages.presentation.show'); // necessary when logout
 
-Route::get('/planning', ['uses' => 'SampleController@calendar']);
 
 
 Route::get('/presentation', 'PresentationController@show');
