@@ -43,7 +43,6 @@ class MembersTableSeeder extends Seeder
                 'mutual_id' => '1',
                 'pension_id' => '1',
             ],
-
         ];
 
         Member::insert($members);
