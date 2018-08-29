@@ -8,8 +8,7 @@ use App\Activity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-//to have the date on the datepicker
-use Carbon\Carbon;
+use Carbon\Carbon; //to have the date on the datepicker
 use Session;
 
 
@@ -39,7 +38,7 @@ class MemberController extends Controller
         $activities = Activity::all();
 
         // return the view and pass the 3 variables to the view
-        return View('pages.member.create',compact('pensions','mutuals','activities'));
+        return view('pages.member.create',compact('pensions','mutuals','activities'));
     }
     
     /**
