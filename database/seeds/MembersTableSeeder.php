@@ -44,7 +44,7 @@ class MembersTableSeeder extends Seeder
                 'pension_id' => '1',
             ],
         ];
-
+        
         Member::insert($members);
     }
 }
