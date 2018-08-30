@@ -16,13 +16,6 @@ Route::resources([
     'member' => 'MemberController',
     'planning_animation' =>'PlanningAnimationController',
 ]);
-    
-// see if I change @calendar in @planning
-// Route::get('/planning', ['uses' => 'SampleController@planning']);
-// Route::get('/planning', ['uses' => 'SampleController@calendar']);
-
-
-
 
 
 
