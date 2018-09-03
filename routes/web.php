@@ -21,3 +21,5 @@ Route::resources([
 
 // Route::view('/test/bem', 'pages.test.bem');
 // Route::view('/welcome', 'obsoletes.welcome');
+// Route::view('/article', 'pages.article.article');
+// Route::view('/template', 'pages.article.template');
