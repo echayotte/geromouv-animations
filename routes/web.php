@@ -6,9 +6,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/', 'pages.presentation.show');
 
-// Route::view('/test/bem', 'pages.test.bem');
-// Route::view('/welcome', 'obsoletes.welcome');
-
 Route::get('/presentation', 'PresentationController@show');
 
 // CRUD with Laravel's nomenclature. It makes the routes by himself, don't need to generate them
@@ -21,7 +18,3 @@ Route::resource('/animation', 'AnimationController');
 //     'photos' => 'PhotoController',
 //     'posts' => 'PostController'
 // ]);
-
-
-Route::resource('/file', 'FileController');
-
