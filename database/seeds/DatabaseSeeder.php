@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
             ActivitiesTableSeeder::class,
             MutualsTableSeeder::class,
             PensionsTableSeeder::class,
+            AnimationsTableSeeder::class,
+            MembersTableSeeder::class,
+            Activities_MembersTableSeeder::class,
         ]);
     }
 }

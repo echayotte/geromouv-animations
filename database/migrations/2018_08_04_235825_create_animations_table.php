@@ -15,6 +15,7 @@ class CreateAnimationsTable extends Migration
     {
         Schema::create('animations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

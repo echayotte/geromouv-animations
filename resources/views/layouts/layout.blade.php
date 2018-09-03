@@ -20,10 +20,10 @@
 		{{-- favicon --}}
 		<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 	
+	@yield('css')
 	{{-- main style --}}
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
 	{{-- <link rel='stylesheet' href='/css/app.css' type='text/css' media='all' /> --}}
-	@yield('css')
 </head>
 
 <body class="page">
@@ -65,11 +65,12 @@
 									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
 								</li>
 								<li>
-									<a href="{{url('pages.animation')}}">Animation</a>
+									<a href="{{url('animation')}}">Animation</a>
 									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
 								</li>
 								<li>
-									<a href="http://geromouv-animations/event/">Planning</a>
+									<a href="{{url('planning')}}">Planning</a>
+									{{-- <a href="http://geromouv-animations/event/">Planning</a> --}}
 								</li>
 							</ul>
 						</li>
