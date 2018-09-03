@@ -47,7 +47,7 @@
                                 <li class="sub-items__text"><span>N° de téléphone principal:</span> {{ $member->primaryphone }}</li>
                                 <li class="sub-items__text"><span>N° de téléphone secondaire:</span> {{ $member->secondaryphone }}</li>
                                 <br>
-                                <li class="sub-items__title">Informations de santé</li>
+                                <li class="sub-items__title">Informations complémentaires</li>
                                 <li class="sub-items__text"><span>Complémentaire Santé:</span> {{ $member->mutual->name }}</li>
                                 <li class="sub-items__text"><span>Caisse de Retraite:</span> {{ $member->pension->name }}</li>
                                 <li class="sub-items__text"><span>Activités choisies:</spa>
