@@ -15,6 +15,7 @@ Route::get('/presentation', 'PresentationController@show');
 Route::resources([
     'member' => 'MemberController',
     'planning_animation' =>'PlanningAnimationController',
+    'event' => 'EventController',
 ]);
 
 
