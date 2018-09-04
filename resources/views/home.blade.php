@@ -9,5 +9,6 @@
     </div>
     @endif
     <p>Vous êtes connectée !</p>
-</div>
+    <a class="btn btn--green" href="{{ route('member.index') }}">liste des inscrits</a>
+
 @endsection
