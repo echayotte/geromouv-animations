@@ -21,7 +21,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = Member::all();
+        // $members = Member::all();
+        $members = Member::paginate(6);
 
         return view('pages.member.index', compact('members'));
     }
@@ -178,6 +179,13 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        // Delete first the member in the pivot table "activity_member"
+        $deleteMemberActivity = DB::table('activity_member')->where('member_id','=',$member->id);
+        $deleteMemberActivity->delete();
+        // Then delete the member in the members table
+
+        $member->delete();
+
+        return redirect::route('member.index')->with('message', 'Membre supprimé avec succès.');
     }
 }
