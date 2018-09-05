@@ -5,29 +5,23 @@ liste des inscrits
 @endsection
 
 @section('content')
-@if (Auth::check())
-
-<label for="">Lister par : </label>
-<a class="btn btn--orange">id</a>
-<a class="btn btn--orange">nom </a>
-<a class="btn btn--orange">prénom</a>
-<a class="btn btn--orange">email</a>
+{{-- @if (Auth::check()) --}}
 
 <table>
     <tr>
         <th>Id</th>
-        <th>Nom <a>&uarr;</a> <a>&darr;</a></th>
-        <th>Prénom &uarr; &darr;</th>
-        <th>email &uarr; &darr;</th>
-        <th class="th-right">actions &uarr; &darr;</th>
+        <th class="nom" style="cursor:pointer">Nom</th>
+        <th>Prénom</th>
+        <th>email</th>
+        <th class="th-right">actions</th>
+        
     </tr>
-    {{-- @foreach ($members as $member) --}}
-    @foreach ($members->sortBy('lastname') as $member)
-    <tr>
-        <td>{{$member->id}}</td>
-        <td>{{$member->lastname}}</td>
-        <td>{{$member->firstname}}</td>
-        <td>{{$member->email}}</td>
+    @foreach ($members as $member)
+    <tr name="row" content="{{$member->id}}">
+        <td class="id" content="{{$member->id}}">{{$member->id}}</td>
+        <td class="lastname" content="{{$member->lastname}}">{{$member->lastname}}</td>
+        <td class="firstname" content="{{$member->firstname}}">{{$member->firstname}}</td>
+        <td class="email" content="{{$member->email}}">{{$member->email}}</td>
         <td class="table-right"><a class="btn btn--green btn--small" href="{{ route('member.show', $member->id) }}">Voir</a>
             <a class="btn btn--orange btn--small" href="{{ route('member.edit', $member->id) }}">Modifier</a>
             
@@ -42,7 +36,7 @@ liste des inscrits
 </table>
 
 {{ $members->links() }}
-@else
+{{-- @else
 <div class="main-content">
     <section>
         <header class="entry-header">
@@ -50,6 +44,11 @@ liste des inscrits
         </header>
     </section>
 </div>
-@endif
+@endif --}}
 
+
+@endsection
+
+@section('js')
+    <script src="{{ asset('js/ajax.js') }}"></script>
 @endsection
