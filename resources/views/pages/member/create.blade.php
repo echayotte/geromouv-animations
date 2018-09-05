@@ -285,7 +285,6 @@ Formulaire d'inscription à Geromouv'
         
         @section('js')
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script src="/js/datepicker.js"></script>
-        <script src="/js/inscription.js"></script>
+	    <script src="{{ asset('js/datepicker.js') }}"></script>
         @endsection
         <!-- .main-content -->
