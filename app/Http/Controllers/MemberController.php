@@ -22,7 +22,12 @@ class MemberController extends Controller
     public function index()
     {
         // $members = Member::all();
-        $members = Member::paginate(6);
+
+        //can  bug. If yes, use Member::paginate(6) only
+        $members = Member::orderBy('lastname', 'asc')->paginate(6);
+        // $members = Member::paginate(6);
+
+
 
         return view('pages.member.index', compact('members'));
     }

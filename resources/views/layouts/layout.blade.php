@@ -4,26 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	{{-- mandatory for Laravel if not $errors --}}
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<title>
 		@yield('title')
 	</title>
 
 	{{-- sela theme --}}
-		{{-- social network font icons --}}
-		<link rel="stylesheet" id="genericons-css" 
-		href="https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.css"
-		{{-- href="http://www.geromouv.fr/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1"  --}}
-		type="text/css" media="all">
-		{{-- favicon --}}
-		<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
+	{{-- social network font icons --}}
+	<link rel="stylesheet" id="genericons-css" 
+	    href="https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.css"
+	    type="text/css" media="all">
+	{{-- favicon --}}
+	<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
+	{{-- end sela theme --}}
 	
 	@yield('css')
 	{{-- main style --}}
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
-	{{-- <link rel='stylesheet' href='/css/app.css' type='text/css' media='all' /> --}}
+
 </head>
 
 <body class="page">
@@ -142,9 +142,12 @@
 	<!-- .page -->
 
 	<!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
 	@yield('js')
-	<script src="/js/app.js"></script>
+	
+	<script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 
 </html>
