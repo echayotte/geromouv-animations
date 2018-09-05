@@ -1,7 +1,10 @@
 let mix = require('laravel-mix')
 
 
-mix.js('resources/assets/js/**/*.js', 'public/js')
+mix.js('resources/assets/js/app.js', 'public/js')
+.js('resources/assets/js/presentation.js', 'public/js')
+.js('resources/assets/js/datepicker.js', 'public/js')
+.js('resources/assets/js/ajax.js', 'public/js')
     .sourceMaps()
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/print.scss', 'public/css')
@@ -22,9 +25,7 @@ mix.js('resources/assets/js/**/*.js', 'public/js')
             'resources/views/**/*.php',
             'public/**/*.html',
             'public/**/*.php',
-            'public/js/**/*.js',
+            '!public/js/**/*.js',
             '!public/css/**/*.css'
         ],
     });
-
-
