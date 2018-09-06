@@ -21,11 +21,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        // $members = Member::all();
-        //can  bug. If yes, use Member::paginate(6) only
-        // $members = Member::orderBy('lastname', 'asc')->paginate(6);
-        // $members = Member::paginate(6);
-
+        // sort with kyslik composer method sortable()
         // sort with kyslik composer
         $members = Member::sortable()->paginate(7);
 
@@ -63,7 +59,7 @@ class MemberController extends Controller
             'member-birthday' => 'required',
             'member-gender' => 'required',
             'member-address' => 'required | string',
-            'member-zipcode' => 'required | integer',
+            'member-zipcode' => 'required | string',
             'member-city' => 'required | string',
             'member-email' => 'required | email',
             'member-primaryphone' => 'required | string',
