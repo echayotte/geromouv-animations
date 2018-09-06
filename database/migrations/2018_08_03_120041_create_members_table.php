@@ -20,7 +20,7 @@ class CreateMembersTable extends Migration
             $table->date('birthday');
             $table->enum('gender', ['Femme', 'Homme']);
             $table->string('address');
-            $table->integer('zipcode');
+            $table->string('zipcode', 5);
             $table->string('city', 100);
             $table->string('email')->unique();
             $table->string('primaryphone', 10);
