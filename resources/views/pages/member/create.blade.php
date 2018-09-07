@@ -184,13 +184,21 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-30">
                         <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
                     </div>
-                    <div class="col-65">
+                    <div class="col-65" style="border:1px solid #f18500; padding:8px; border-radius:4px">
                         <select id="member-mutual" name="member-mutual">
                             <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
+                            <option value="" >Si autre, sélectionnez cette ligne..</option>
                             @foreach ($mutuals as $mutual)
                             <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
                             @endforeach
                         </select>
+
+
+                        <label for="new-mutual">Si elle n'apparaît pas dans la liste</label>
+                        <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="ajouter votre complémentaire Santé / Mutuelle.." value="{{ old('member-new-mutual') }}">
+                                   
+                        
+
                         @if($errors->has('member-mutual'))
                             <p class="error")>{{ $errors->first('member-mutual') }}</p>
                         @endif
