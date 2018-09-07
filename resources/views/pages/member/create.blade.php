@@ -179,8 +179,48 @@ Formulaire d'inscription à Geromouv'
                     </div>
                 </div>
                 
+{{-- //********************************************************************
+/*                                                                  *
+ * add Mutual                                                       *
+ *                                                                  */
+//******************************************************************** --}}
+
                 {{-- mutual --}}
                 <div class="row">
+                    <div class="col-30">
+                        <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
+                    </div>
+                    <div class="col-65" style="border:1px solid #f18500; padding:8px; border-radius:4px">
+                        <select id="member-mutual" name="member-mutual">
+                            <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
+                            <option value="" >Si autre, sélectionnez cette ligne..</option>
+                            @foreach ($mutuals as $mutual)
+                            <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
+                            @endforeach
+                        </select>
+
+
+                        <label for="new-mutual">Si elle n'apparaît pas dans la liste</label>
+                        <div>
+                            <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="ajouter votre complémentaire Santé / Mutuelle.." value="{{ old('member-new-mutual') }}">
+                            <button onclick="addOption()" name="addWaterSource" id="addWaterSource">Ajouter</button>
+                        </div>
+
+                        
+
+                        @if($errors->has('member-mutual'))
+                            <p class="error")>{{ $errors->first('member-mutual') }}</p>
+                        @endif
+                    </div>
+                </div>
+{{-- //********************************************************************
+/*                                                                  *
+ * end add Mutual                                                   *
+ *                                                                  */
+//******************************************************************** --}}
+
+                {{-- mutual --}}
+                {{-- <div class="row">
                     <div class="col-30">
                         <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
                     </div>
@@ -203,8 +243,9 @@ Formulaire d'inscription à Geromouv'
                             <p class="error")>{{ $errors->first('member-mutual') }}</p>
                         @endif
                     </div>
-                </div>
-                
+                </div> --}}
+
+
                 {{-- pension─ --}}
                 <div class="row">
                     <div class="col-30">
