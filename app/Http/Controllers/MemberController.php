@@ -35,8 +35,8 @@ class MemberController extends Controller
      */
     public function create()
     {
-        $pensions = Pension::all();
-        $mutuals = Mutual::all();
+        $mutuals = Mutual::orderBy('name', 'asc')->get();
+        $pensions = Pension::orderBy('name', 'asc')->get();
         $activities = Activity::all();
 
         // return the view and pass the 3 variables to the view

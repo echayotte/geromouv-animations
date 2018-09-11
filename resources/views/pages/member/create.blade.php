@@ -55,7 +55,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-lastname" name="member-lastname" placeholder="votre nom.." value="{{ old('member-lastname') }}">
                         @if($errors->has('member-lastname'))
-                            <p class="error")>{{ $errors->first('member-lastname') }}</p>
+                            <p class="error">{{ $errors->first('member-lastname') }}</p>
                         @endif
                     </div>
                 </div>
@@ -68,7 +68,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-firstname" name="member-firstname" placeholder="votre prénom.." value="{{ old('member-firstname') }}">
                         @if($errors->has('member-firstname'))
-                            <p class="error")>{{ $errors->first('member-firstname') }}</p>
+                            <p class="error">{{ $errors->first('member-firstname') }}</p>
                         @endif
                     </div>
                 </div>
@@ -112,7 +112,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-address" name="member-address" placeholder="votre numéro et nom de rue.." value="{{ old('member-address') }}">
                         @if($errors->has('member-address'))
-                            <p class="error")>{{ $errors->first('member-address') }}</p>
+                            <p class="error">{{ $errors->first('member-address') }}</p>
                         @endif
                     </div>
                 </div>
@@ -125,7 +125,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-zipcode" name="member-zipcode" placeholder="votre code postal.." value="{{ old('member-zipcode') }}">
                         @if($errors->has('member-zipcode'))
-                            <p class="error")>{{ $errors->first('member-zipcode') }}</p>
+                            <p class="error">{{ $errors->first('member-zipcode') }}</p>
                         @endif
                     </div>
                 </div>
@@ -138,7 +138,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-city" name="member-city" placeholder="votre ville.." value="{{ old('member-city') }}">
                         @if($errors->has('member-city'))
-                            <p class="error")>{{ $errors->first('member-city') }}</p>
+                            <p class="error">{{ $errors->first('member-city') }}</p>
                         @endif
                     </div>
                 </div>
@@ -151,7 +151,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="email" id="member-email" name="member-email" placeholder="votre email.." value="{{ old('member-email') }}">
                         @if($errors->has('member-email'))
-                            <p class="error")>{{ $errors->first('member-email') }}</p>
+                            <p class="error">{{ $errors->first('member-email') }}</p>
                         @endif
                     </div>
                 </div>
@@ -164,7 +164,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                         <input type="text" id="member-primaryphone" name="member-primaryphone" placeholder="votre numéro principal.." value="{{ old('member-primaryphone') }}">
                         @if($errors->has('member-primaryphone'))
-                            <p class="error")>{{ $errors->first('member-primaryphone') }}</p>
+                            <p class="error">{{ $errors->first('member-primaryphone') }}</p>
                         @endif
                     </div>
                 </div>
@@ -178,73 +178,32 @@ Formulaire d'inscription à Geromouv'
                         <input type="text" id="member-secondaryphone" name="member-secondaryphone" placeholder="votre numéro secondaire.." value="{{ old('member-secondaryphone') }}">
                     </div>
                 </div>
-                
-{{-- //********************************************************************
-/*                                                                  *
- * add Mutual                                                       *
- *                                                                  */
-//******************************************************************** --}}
 
                 {{-- mutual --}}
                 <div class="row">
+
                     <div class="col-30">
                         <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
                     </div>
-                    <div class="col-65" style="border:1px solid #f18500; padding:8px; border-radius:4px">
-                        <select id="member-mutual" name="member-mutual">
-                            <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
-                            <option value="" >Si autre, sélectionnez cette ligne..</option>
-                            @foreach ($mutuals as $mutual)
-                            <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
-                            @endforeach
-                        </select>
 
-
-                        <label for="new-mutual">Si elle n'apparaît pas dans la liste</label>
-                        <div>
-                            <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="ajouter votre complémentaire Santé / Mutuelle.." value="{{ old('member-new-mutual') }}">
-                            <button onclick="addOption()" name="addWaterSource" id="addWaterSource">Ajouter</button>
-                        </div>
-
-                        
-
-                        @if($errors->has('member-mutual'))
-                            <p class="error")>{{ $errors->first('member-mutual') }}</p>
-                        @endif
+                    <div class="col-65">
+                            <div id="ajax-mutual"></div>
+                            <select id="member-mutual" name="member-mutual">
+                                <option id="option-mutual-selected" value="" selected="selected" disabled>votre complémentaire Santé / Mutuelle..</option>
+                                @foreach($mutuals as $mutual) {
+                                <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('member-mutual'))
+                            <p class="error">{{ $errors->first('member-mutual') }}</p>
+                            @endif
+                            
+                            <div id="removeMutualIfSuccess">
+                                <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-mutual') }}">
+                                <button  class="btn btn--green btn--small add-new-mutual" type="button">Ajouter</button>
+                            </div>
                     </div>
                 </div>
-{{-- //********************************************************************
-/*                                                                  *
- * end add Mutual                                                   *
- *                                                                  */
-//******************************************************************** --}}
-
-                {{-- mutual --}}
-                {{-- <div class="row">
-                    <div class="col-30">
-                        <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
-                    </div>
-                    <div class="col-65" style="border:1px solid #f18500; padding:8px; border-radius:4px">
-                        <select id="member-mutual" name="member-mutual">
-                            <option value="" selected disabled>votre complémentaire Santé / Mutuelle..</option>
-                            <option value="" >Si autre, sélectionnez cette ligne..</option>
-                            @foreach ($mutuals as $mutual)
-                            <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
-                            @endforeach
-                        </select>
-
-
-                        <label for="new-mutual">Si elle n'apparaît pas dans la liste</label>
-                        <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="ajouter votre complémentaire Santé / Mutuelle.." value="{{ old('member-new-mutual') }}">
-                                   
-                        
-
-                        @if($errors->has('member-mutual'))
-                            <p class="error")>{{ $errors->first('member-mutual') }}</p>
-                        @endif
-                    </div>
-                </div> --}}
-
 
                 {{-- pension─ --}}
                 <div class="row">
@@ -252,15 +211,21 @@ Formulaire d'inscription à Geromouv'
                         <label for="member-pension">Caisse de Retraite <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
+                        <div id="ajax-pension"></div>
                         <select id="member-pension" name="member-pension">
-                            <option value="" selected disabled>votre caisse de retraite..</option>
+                            <option id="option-pension-selected" value="" selected="selected" disabled>votre caisse de retraite..</option>
                             @foreach ($pensions as $pension)
                             <option value="{{ $pension->id }}" {{ Input::old('member-pension') == $pension->id ? 'selected="selected"' : '' }}>{{ $pension->name }}</option>
                             @endforeach
                         </select>
                         @if($errors->has('member-pension'))
-                            <p class="error")>{{ $errors->first('member-pension') }}</p>
+                            <p class="error">{{ $errors->first('member-pension') }}</p>
                         @endif
+
+                        <div id="removePensionIfSuccess">
+                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-pension') }}">
+                            <button  class="btn btn--green btn--small add-new-pension" type="button">Ajouter</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -278,7 +243,7 @@ Formulaire d'inscription à Geromouv'
                         <br>
                         @endforeach
                         @if($errors->has('member-activities'))
-                            <p class="error")>{{ $errors->first('member-activities') }}</p>
+                            <p class="error">{{ $errors->first('member-activities') }}</p>
                         @endif
                     </div>
                 </div>
@@ -287,7 +252,9 @@ Formulaire d'inscription à Geromouv'
                 <div>
                     <input class="btn" type="submit" id="submit" value="Envoyer" name="submit">
                 </div>
+
             </form>
+
         </div>
     </section>
 </div>
@@ -296,5 +263,9 @@ Formulaire d'inscription à Geromouv'
 @section('js')
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="{{ asset('js/datepicker.js') }}"></script>
+
+{{-- ajax request --}}
+<script src="{{ asset('js/addMutual.js') }}"></script>
+<script src="{{ asset('js/addPension.js') }}"></script>
 @endsection
 <!-- .main-content -->

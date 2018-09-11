@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Pension;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
+
 
 class PensionController extends Controller
 {
@@ -35,7 +38,38 @@ class PensionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Pension::where('name', '=', Input::get('member-new-pension'))->exists()) {
+            
+            // pension exists
+            return response()->json(array(
+                'message' => 'caisse existante !',
+                'status' => true
+            ));
+        } else {
+
+            // pension doesn't exist
+            request()->validate([
+                'member-new-pension' => 'required | string'
+            ]);
+
+            $pension = Pension::create([
+            // db column => requets(form's type="name")
+                'name' => request('member-new-pension')
+            ]);
+
+            $pensions = Pension::all();
+
+            //json sent to addPension.js
+            $response = array(
+                'newPensionId' => $pension->id,
+                'newPensionName' => $pension->name,
+                'pensions' => $pensions,
+                'message' => 'caisse enregistrée',
+                'status' => false
+            );
+
+            return response()->json($response);
+        }
     }
 
     /**

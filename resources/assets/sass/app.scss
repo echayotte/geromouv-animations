@@ -109,9 +109,9 @@ button {
     box-shadow: 1px 1px 1px $greenDark;
     background-color: $green;
     color: $white;
-        -webkit-transition-duration : 0.4s;
-        -moz-transition-duration : 0.4s;
-        -o-transition-duration : 0.4s;
+    -webkit-transition-duration : 0.4s;
+    -moz-transition-duration : 0.4s;
+    -o-transition-duration : 0.4s;
     transition-duration : 0.4s;
     text-transform: capitalize;
 }
@@ -123,8 +123,8 @@ button {
 
 //********************************************************************
 /*                                                                  *
- * table                                                            *
- *                                                                  */
+* table                                                            *
+*                                                                  */
 //********************************************************************
 table {
     border-collapse: collapse;
@@ -341,6 +341,14 @@ tr:hover {
             padding: 20px;
             margin-bottom: 60px;
             
+            #member-new-mutual,
+            #member-new-pension  {
+                width: 60%;
+                margin: 6px 0;
+                background-color: beige;
+                color: $greenDark;
+                text-transform: lowercase;
+            }
             input[type=radio],
             input[type=checkbox] {
                 vertical-align: middle;
@@ -359,7 +367,6 @@ tr:hover {
                 color: $orange;
                 text-transform: capitalize;
             }
-            
             select {
                 background-color:$white;
             }
@@ -389,12 +396,25 @@ tr:hover {
                 font-weight: bold;
                 color: $redPink;
             }
-            .error {
-                margin: -10px 0 0 -4px;
-                font-size: 14px;
-                color: $redPink;
-                font-weight: bold;
-                
+            .error, .success {
+                color: $white;
+                background: $redPink;
+                border-radius: 2px;
+                box-shadow: 1px 1px 2px $greyDark;
+                margin: 1px 4px 10px 4px;
+                width: 40%;
+                text-align: center;
+                padding: inherit;
+                // margin: -10px 0 0 -4px;
+                // font-size: 14px;
+                // color: $redPink;
+                // font-weight: bold;
+            }
+            .success {
+                background: $green;
+            }
+            .alert {
+                background: $orange;
             }
             .col-30 {
                 float: left;
