@@ -4,9 +4,6 @@
 liste des inscrits
 @endsection
 
-@section('css')
-@endsection
-
 @section('content')
 
 <div class="content">
@@ -17,12 +14,8 @@ liste des inscrits
         <ul class="ajax"></ul>
     </div>
 </div>
-
 @endsection
-@section('js')
 
-<script>
-    
-    
-</script>   
+@section('js')
+    <script src="{{ asset('js/ajax.js') }}"></script>
 @endsection
