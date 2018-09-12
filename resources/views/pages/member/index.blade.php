@@ -9,7 +9,7 @@ liste des inscrits
 @endsection
 
 @section('content')
-{{-- @if (Auth::check()) --}}
+@if (Auth::check())
 
     <table>
         <tr>
@@ -48,7 +48,7 @@ liste des inscrits
     </table>
 
 {{ $members->links() }}
-{{-- @else
+@else
 <div class="main-content">
     <section>
         <header class="entry-header">
@@ -56,5 +56,5 @@ liste des inscrits
         </header>
     </section>
 </div>
-@endif --}}
+@endif
 @endsection
