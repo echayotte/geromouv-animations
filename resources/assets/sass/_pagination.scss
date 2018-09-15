@@ -1,0 +1,84 @@
+.parent-pagination {
+display: flex;
+justify-content: center;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: $orangeDark;
+  background-color: $white;
+  border: 1px solid #dee2e6;
+
+  &:hover {
+    z-index: 2;
+    color: darken($orangeDark, 15%);
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+  &:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba($orangeDark, .25);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .page-link elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+      border-radius:.25rem;
+    }
+  }
+  &:last-child {
+    .page-link {
+      border-radius:.25rem;
+    }
+  }
+
+  &.active .page-link {
+    z-index: 1;
+    color: $white;
+    background-color: $orangeDark;
+    border-color: $orangeDark;
+  }
+
+  &.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    // Opinionated: remove the "hand" cursor set previously for .page-link
+    cursor: auto;
+    background-color: $white;
+    border-color: #dee2e6;
+  }
+}
+
+
+//
+// Sizing
+//
+
+// .pagination-lg {
+//   @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, .25rem-lg);
+// }
+
+// .pagination-sm {
+//   @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, .25rem-sm);
+// }
