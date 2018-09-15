@@ -183,8 +183,8 @@ class MemberController extends Controller
         // Delete first the member in the pivot table "activity_member"
         $deleteMemberActivity = DB::table('activity_member')->where('member_id','=',$member->id);
         $deleteMemberActivity->delete();
+        
         // Then delete the member in the members table
-
         $member->delete();
 
         return redirect::route('member.index')->with('message', 'Membre supprimé avec succès.');

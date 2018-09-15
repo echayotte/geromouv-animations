@@ -199,7 +199,7 @@ Formulaire d'inscription à Geromouv'
                             @endif
                             
                             <div id="removeMutualIfSuccess">
-                                <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-mutual') }}">
+                                <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter la vôtre si pas dans la liste..">
                                 <button  class="btn btn--green btn--small add-new-mutual" type="button">Ajouter</button>
                             </div>
                     </div>
@@ -223,7 +223,7 @@ Formulaire d'inscription à Geromouv'
                         @endif
 
                         <div id="removePensionIfSuccess">
-                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-pension') }}">
+                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter la vôtre si pas dans la liste..">
                             <button  class="btn btn--green btn--small add-new-pension" type="button">Ajouter</button>
                         </div>
                     </div>

@@ -8,7 +8,11 @@ use Kyslik\ColumnSortable\Sortable;
 
 class Member extends Model
 {
+    // need for method sortable() in member.index Controller 
     use Sortable;
+    // to sort member's table in member's index.blade.php
+    public $sortable = ['id', 'lastname', 'firstname', 'email'];
+
 
     // needed to format the date first but then it didn't permit to update a member so commented
     // protected $dateFormat = 'Y-m-d';
@@ -19,9 +23,6 @@ class Member extends Model
         //DB's column   
         'lastname', 'firstname', 'birthday', 'gender', 'address', 'zipcode', 'city', 'email', 'primaryphone', 'mutual_id', 'pension_id',
     ];
-
-    // to sort member's table in member's index.blade.php
-    public $sortable = ['id', 'lastname', 'firstname', 'email'];
 
     // naming theses functions by their foreignkey without the id for Laravel's nomenclature
     // relation one to many (inverse)
