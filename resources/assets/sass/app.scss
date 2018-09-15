@@ -4,9 +4,13 @@
 @import "datepicker-jquery-ui";
 // variables
 @import "variables";
+@import "pagination";
 
 // links pour images : url("/storage/images/assets/xxx"
 
+.content-wrapper {
+padding-bottom:0;
+}
 .page .site-content {
     min-height: 74.5vh;
 }
@@ -130,7 +134,8 @@ table {
     border-collapse: collapse;
     width: 100%;
     font-family: $f-ssp;
-    // word-spacing:  1px;
+    word-spacing:  1px;
+    border: 1px solid #dee2e6;
 }
 th,
 td {
@@ -195,7 +200,9 @@ tr:hover {
         }
         
         .entry-content {
-            
+            width: 100%;
+            padding-bottom: 0;
+            // margin-bottom: 0;
             .cards {
                 display: flex;
                 flex-flow: row wrap;
@@ -459,3 +466,4 @@ tr:hover {
         //         width: 100%;
         //         margin-top: 0;
         // }
+
