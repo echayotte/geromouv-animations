@@ -1,11 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Mutual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+
 use Session;
 
 
@@ -18,7 +20,10 @@ class MutualController extends Controller
      */
     public function index()
     {
-        $mutuals = Mutual::all();
+        // sort with kyslik composer method sortable()
+        $mutuals = Mutual::sortable('name')->paginate(7);
+
+        return view('pages.mutual.index', compact('mutuals'));
     }
 
     /**
@@ -117,6 +122,17 @@ class MutualController extends Controller
      */
     public function destroy(Mutual $mutual)
     {
-        //
+        // membre utilise mutuelle
+        $mutualMember = DB::table('members')->where('mutual_id', '=', $mutual->id)->first();
+
+        if($mutualMember) {
+            //ne pas supprimer
+            //envoyer un message d'info
+            return Redirect::route('mutual.index')->with('message', 'Cette complémentaire ne peut pas être supprimée car elle est utilisée par un inscrit.');
+        } else {
+            //supprimer
+        $mutual->delete();
+        return Redirect::route('mutual.index')->with('message', 'Complémentaire supprimée avec succès.');
+        }
     }
 }

@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Pension;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
+use Session;
 
 class PensionController extends Controller
 {
@@ -17,7 +19,10 @@ class PensionController extends Controller
      */
     public function index()
     {
-        $pensions = Pension::all();
+        // sort with kyslik composer method sortable()
+        $pensions = Pension::sortable()->paginate(7);
+
+        return view('pages.pension.index', compact('pensions'));
     }
 
     /**
@@ -114,6 +119,17 @@ class PensionController extends Controller
      */
     public function destroy(Pension $pension)
     {
-        //
+        // membre utilise mutuelle
+        $mutualPension = DB::table('members')->where('pension_id', '=', $pension->id)->first();
+
+        if ($mutualPension) {
+            //envoyer un message d'info
+            // return Redirect::route('pension.index')->with('message', 'Cette caisse de retraite ne peut pas être supprimée car elle est utilisée par un inscrit.');
+            return Redirect::route('pension.index')->with('message', $pension->name . ' ne peut pas être supprimée car elle est utilisée par un inscrit.');
+        } else {
+            //supprimer
+            $pension->delete();
+            return Redirect::route('pension.index')->with('message', 'Caisse de retraite supprimée avec succès.');
+        }
     }
 }
