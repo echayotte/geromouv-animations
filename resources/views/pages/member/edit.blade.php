@@ -54,6 +54,7 @@ use Illuminate\Support\Facades\Input;
                         <a href="http://géromouv-animations/protection-des-donnees" title="Protection des données personnelles"> politique de protection des données personnelles</a>
                     </em>
                 </p>
+
                 {{-- lastname --}}
                 <div class="row">
                     <div class="col-30">
@@ -66,6 +67,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- firstname --}}
                 <div class="row">
                     <div class="col-30">
@@ -78,6 +80,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- birthday --}}
                 <div class="row">
                     <div class="col-30">
@@ -90,6 +93,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- gender --}}
                 <div class="row">
                     <div class="col-30">
@@ -107,6 +111,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- address --}}
                 <div class="row">
                     <div class="col-30">
@@ -119,6 +124,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+                
                 {{-- zipcode --}}
                 <div class="row">
                     <div class="col-30">
@@ -131,6 +137,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- city --}}
                 <div class="row">
                     <div class="col-30">
@@ -143,6 +150,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- email --}}
                 <div class="row">
                     <div class="col-30">
@@ -155,6 +163,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- primaryphone --}}
                 <div class="row">
                     <div class="col-30">
@@ -167,6 +176,7 @@ use Illuminate\Support\Facades\Input;
                         @endif
                     </div>
                 </div>
+
                 {{-- secondaryphone --}}
                 <div class="row">
                     <div class="col-30">
@@ -176,12 +186,14 @@ use Illuminate\Support\Facades\Input;
                         <input type="text" id="member-secondaryphone" name="member-secondaryphone" placeholder="votre numéro secondaire.." value="{{ $member->secondaryphone }}">
                     </div>
                 </div>
+
                 {{-- mutual --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-mutual">Complémentaire Santé <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
+                        <div id="ajax-mutual"></div>
                         <select id="member-mutual" name="member-mutual">
                             @foreach ($mutuals as $mutual)
                                 @if ($member->mutual->id === $mutual->id)
@@ -194,14 +206,21 @@ use Illuminate\Support\Facades\Input;
                         @if($errors->has('member-mutual'))
                         <p class="error")>{{ $errors->first('member-mutual') }}</p>
                         @endif
+
+                        <div id="removeMutualIfSuccess">
+                            <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-mutual') }}">
+                            <button  class="btn btn--green btn--small add-new-mutual" type="button">Ajouter</button>
+                        </div>
                     </div>
                 </div>
+
                 {{-- pension─ --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-pension">Caisse de Retraite <span class="mandatory">*</span></label>
                     </div>
                     <div class="col-65">
+                        <div id="ajax-pension"></div>
                         <select id="member-pension" name="member-pension">
                             @foreach ($pensions as $pension)
                                 @if($member->pension->id === $pension->id)
@@ -214,8 +233,15 @@ use Illuminate\Support\Facades\Input;
                         @if($errors->has('member-pension'))
                             <p class="error")>{{ $errors->first('member-pension') }}</p>
                         @endif
+
+                        <div id="removePensionIfSuccess">
+                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter la vôtre si pas dans la liste.." value="{{ old('member-new-pension') }}">
+                            <button  class="btn btn--green btn--small add-new-pension" type="button">Ajouter</button>
+                        </div>
+                                                
                     </div>
                 </div>
+
                 {{-- activities  --}}
                 <div class="row">
                     <div class="col-30">
@@ -238,6 +264,7 @@ use Illuminate\Support\Facades\Input;
                     </div>
                 </div>
                 
+                {{-- submit button --}}
                 <div>
                     <input class="btn" type="submit" id="submit" value="Envoyer" name="submit">
                 </div>
@@ -251,5 +278,8 @@ use Illuminate\Support\Facades\Input;
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="{{ asset('js/datepicker.js') }}"></script>
 
+    {{-- ajax request --}}
+    <script src="{{ asset('js/addMutual.js') }}"></script>
+    <script src="{{ asset('js/addPension.js') }}"></script>
 @endsection
 <!-- .main-content -->
