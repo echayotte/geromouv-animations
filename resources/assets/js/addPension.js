@@ -3,8 +3,6 @@ $(document).ready(function () {
     $(".add-new-pension").click(function (evt) {
         evt.preventDefault();
 
-        console.log('bouton pension ok');
-        
         // put the token
         $.ajaxSetup({
             headers: {
@@ -24,7 +22,6 @@ $(document).ready(function () {
             },
             dataType: 'JSON',
             success: function (data) {
-                console.log(data);
                 
                 function closeAlert() {
                     selectDivAjaxPension.style.display = " none";
@@ -62,14 +59,9 @@ $(document).ready(function () {
 
                     // close the alert in 3 secs
                     window.setTimeout(closeAlert, 1500);
-                    // removeDiv.remove();
-
-
                 }
 
                 selectDivAjaxPension.innerHTML = createPTag.outerHTML;
-
-
             },
 
             error: function (e) {

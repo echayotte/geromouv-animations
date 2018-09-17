@@ -1,5 +1,3 @@
-// console.log("page presentation index ok");
-
 var btnStages = document.getElementById('btn-stages');
     btnSeances = document.getElementById('btn-seances'),
     btnEvents = document.getElementById('btn-events'),

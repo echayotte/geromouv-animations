@@ -24,8 +24,7 @@ $(document).ready(function () {
             },
             dataType: 'JSON',
             success: function (data) {
-                console.log(data);
-                
+
                 function closeAlert() {
                     selectDivAjaxMutual.style.display = " none";
                 }
@@ -40,7 +39,6 @@ $(document).ready(function () {
                     selectDivAjaxMutual.style.display = " block";
                     createPTag.setAttribute('class', 'error');
                     window.setTimeout(closeAlert, 1500);
-
                 }
                 else {
                     selectDivAjaxMutual.style.display = " block";
@@ -61,20 +59,14 @@ $(document).ready(function () {
                     var getDiv = document.getElementById('removeMutualIfSuccess');
                     getDiv.remove();
 
-                    // close the alert in 3 secs
+                    // close the alert in 1.5 secs
                     window.setTimeout(closeAlert, 1500);
-                    // removeDiv.remove();
-                    
-                    
                 }
                 
                 selectDivAjaxMutual.innerHTML = createPTag.outerHTML;
-                
-
             },
 
             error: function (e) {
-                console.log("pas ok");
                 console.log(e.responseText);
             }
         });
