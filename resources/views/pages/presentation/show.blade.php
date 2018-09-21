@@ -19,12 +19,12 @@
                 GEROMOUV' propose des activités destinées aux seniors désireux de pratiquer une activité physique adaptée à leur besoin.
             </p>
 
-            <div class="cards">
+            <div class="cards" id="cards">
                 <div class="cards__card card">
                     <img class="card__img" src="/storage/images/pages/presentation/seances.jpg">
                     <div class="card__body">
                         <h3>Séances d'activités</h3>
-                        <button class="btn btn--white" id="btn-seances">Présentation</button>
+                        <a id="anchor-seances"><button class="btn btn--white" id="btn-seances">Présentation</button></a>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     <img class="card__img" src="/storage/images/pages/presentation/stages.jpg">
                     <div class="card__body">
                         <h3>Stages</h3>
-                        <button class="btn btn--white" id="btn-stages">Présentation</button>
+                        <a id="anchor-stages"><button class="btn btn--white" id="btn-stages">Présentation</button></a>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <img class="card__img" src="/storage/images/pages/presentation/events.jpg">
                     <div class="card__body">
                         <h3>Événements</h3>
-                        <button class="btn btn--white" id="btn-events">Présentation</button>
+                        <a id="anchor-events"><button class="btn btn--white" id="btn-events">Présentation</button></a>
                     </div>
                 </div>
             </div>
