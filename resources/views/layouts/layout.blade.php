@@ -27,6 +27,7 @@
 </head>
 
 <body class="page">
+	<a id="backToTop"></a>
 	<div class="site">
 
 		<header>
@@ -38,6 +39,12 @@
 						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
+						@if (Auth::check())
+						<li>
+							<a href="{{url('home')}}">Admin</a>
+						</li>
+						@endif
+						
 						<li>
 							<a target="_blank" href="http://geromouv.fr/notreequipe/">Notre équipe</a>
 						</li>
