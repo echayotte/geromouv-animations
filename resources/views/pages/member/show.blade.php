@@ -14,7 +14,7 @@
         @include('layouts.partials.backToTop')
         <section>
             <header class="entry-header">
-                <h1 class="entry-title">Vérifiez les informations avant d'imprimer sinon modifiez-les.</h1>
+                <h1 class="entry-title">Informations renseignées</h1>
             </header>
             <!-- .entry-header -->
 
@@ -32,7 +32,6 @@
             </div>
         </section>
         <section>
-            <div class="validation-form">
                 <div class="entry-content">
                     <ul class="list">
                         <li class="list__items items">
@@ -60,7 +59,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
         </section>
     </div>
 @endsection
