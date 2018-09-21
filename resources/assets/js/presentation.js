@@ -41,3 +41,24 @@ for (let i = 0; i < btn.length; i++) {
         }
     })
 }
+
+//set Attributes of buttons to have an anchor for mobile
+if (window.matchMedia('screen and (max-width: 600px)').matches) {
+
+    var anchorSeances = document.getElementById("anchor-seances");
+    var aSeances = document.createAttribute("href");
+    aSeances.value = "#presentation-seances";
+    anchorSeances.setAttributeNode(aSeances);
+    
+
+    var anchorStages = document.getElementById("anchor-stages");
+    var aStages = document.createAttribute("href");
+    aStages.value = "#presentation-stages";
+    anchorStages.setAttributeNode(aStages);
+
+    var anchorEvents = document.getElementById("anchor-events");
+    var aEvents = document.createAttribute("href");
+    aEvents.value = "#presentation-events";
+    anchorEvents.setAttributeNode(aEvents);
+    
+}
