@@ -6,7 +6,6 @@
         </header>
         
         <iframe src="https://www.youtube.com/embed/ZqE1nQwTzFQ?controls=1"></iframe>
-
         <p>
             Désireux(ses) de pratiquer régulièrement une activité physique en intérieur ou/et en extérieur... GEROMOUV’ vous propose de venir essayer les activités suivantes :
         </p>

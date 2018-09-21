@@ -5,8 +5,7 @@
             <h2><span>Événements</span></h2>
         </header>
         
-        <iframe src="https://www.youtube.com/embed/?controls=1"></iframe>
-
+        <iframe src="https://www.youtube.com/embed/xvrVfAGH_C8?controls=1"></iframe>
         <p>
             Désireux(ses) de pratiquer régulièrement une activité physique en intérieur ou/et en extérieur... GEROMOUV’ vous propose de venir essayer les activités suivantes :
         </p>
