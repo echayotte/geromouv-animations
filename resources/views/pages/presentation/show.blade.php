@@ -21,10 +21,10 @@
 
             <div class="cards" id="cards">
                 <div class="cards__card card">
-                    <img class="card__img" src="/storage/images/pages/presentation/seances.jpg">
+                    <img class="card__img" src="/storage/images/pages/presentation/activities.jpg">
                     <div class="card__body">
-                        <h3>Séances d'activités</h3>
-                        <a id="anchor-seances"><button class="btn btn--white" id="btn-seances">Présentation</button></a>
+                        <h3>Activités</h3>
+                        <a id="anchor-activities"><button class="btn btn--white" id="btn-activities">Présentation</button></a>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
         <!-- .entry-content -->
     </section>
 
-    <div class="presentation-hidden" id="presentation-seances">@include('pages.presentation.partials.seances')</div>
+    <div class="presentation-hidden" id="presentation-activities">@include('pages.presentation.partials.activities')</div>
     <div class="presentation-hidden" id="presentation-stages">@include('pages.presentation.partials.stages')</div>
     <div class="presentation-hidden" id="presentation-events">@include('pages.presentation.partials.events')</div>
     
