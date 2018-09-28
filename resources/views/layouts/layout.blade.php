@@ -24,6 +24,7 @@
 	{{-- main style --}}
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
 
+	
 </head>
 
 <body class="page">
@@ -35,21 +36,22 @@
 				<!-- button for mobile navigation -->
 				<button class="menu-toggle">Menu</button>
 				<div>
-					<ul>
-						<li class="current_page_item">
+					<div id="logo"><img src="/storage/images/assets/logo-70.png" alt="logo"></div>
+					<ul id="menu-container">
+						<li class="menu-item current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
 						@if (Auth::check())
-						<li>
+						<li class="menu-item">
 							<a href="{{url('home')}}">Admin</a>
 						</li>
 						@endif
 						
-						<li>
+						<li class="menu-item">
 							<a target="_blank" href="http://geromouv.fr/notreequipe/">Notre équipe</a>
 						</li>
 
-						<li class="menu-item-has-children">
+						<li class="menu-item menu-item-has-children">
 							<a href="">Parcours</a>
 							<ul class="sub-menu">
 								<li>
@@ -64,8 +66,9 @@
 							</ul>
 						</li>
 
-						<li class="menu-item-has-children">
-							<a href="">Animations</a>
+						{{-- <li class="menu-item menu-item-has-children current_page_item"> --}}
+						<li class="menu-item menu-item-has-children active">
+							<a href="{{url('presentation')}}">Animations</a>
 							<ul class="sub-menu">
 								<li>
 									<a href="{{url('presentation')}}">Présentation et Inscription</a>
@@ -81,10 +84,10 @@
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class="menu-item">
 							<a target="_blank" href="http://geromouv.fr/blog/">Blog</a>
 						</li>
-						<li>
+						<li class="menu-item">
 							<a target="_blank" href="http://geromouv.fr/contact/">Contact</a>
 						</li>
 					</ul>
