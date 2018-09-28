@@ -38,7 +38,8 @@
 				<div>
 					<div id="logo"><img src="/storage/images/assets/logo-70.png" alt="logo"></div>
 					<ul id="menu-container">
-						<li class="menu-item current_page_item">
+						<li class="menu-item">
+						{{-- <li class="menu-item current_page_item"> --}}
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
 						@if (Auth::check())
@@ -68,6 +69,7 @@
 
 						{{-- <li class="menu-item menu-item-has-children current_page_item"> --}}
 						<li class="menu-item menu-item-has-children active">
+						{{-- <li class="menu-item menu-item-has-children"> --}}
 							<a href="{{url('presentation')}}">Animations</a>
 							<ul class="sub-menu">
 								<li>
