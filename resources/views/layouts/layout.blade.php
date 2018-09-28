@@ -71,15 +71,12 @@
 							<ul class="sub-menu">
 								<li>
 									<a href="{{url('presentation')}}">Présentation et Inscription</a>
-									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
-								</li>
-								<li>
-									<a href="{{url('animation')}}">Animation</a>
-									{{-- <a href="http://geromouv-animations/presentation_et_inscription">Présentation et Inscription</a> --}}
 								</li>
 								<li>
 									<a href="{{url('planning')}}">Planning</a>
-									{{-- <a href="http://geromouv-animations/event/">Planning</a> --}}
+								</li>
+								<li>
+									<a href="">Animateurs et Professionnels de Santé</a>
 								</li>
 							</ul>
 						</li>
