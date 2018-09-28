@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    Inscription et présentation
+    Présentation et Inscription
 @endsection
 
 @section('content')
