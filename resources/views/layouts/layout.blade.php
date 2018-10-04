@@ -41,12 +41,6 @@
 						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
 						</li>
-						@if (Auth::check())
-						<li>
-							<a href="{{url('home')}}">Admin</a>
-						</li>
-						@endif
-						
 						<li>
 							<a target="_blank" href="http://geromouv.fr/notreequipe/">Notre équipe</a>
 						</li>
@@ -81,11 +75,34 @@
 							</ul>
 						</li>
 						<li>
-							<a target="_blank" href="http://geromouv.fr/blog/">Blog</a>
+							<a target="_blank" href="http://www.geromouv.fr/actualites/">Actualités</a>
 						</li>
 						<li>
 							<a target="_blank" href="http://geromouv.fr/contact/">Contact</a>
 						</li>
+						
+						@if (Auth::check())
+						<li class="menu-item-has-children">
+							<a href="{{url('home')}}">Admin</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="{{url('member')}}">Liste des inscrits</a>
+								</li>
+								<li>
+									<a href="{{url('mutual')}}">Liste des mutuelles</a>
+								</li>
+								<li>
+									<a href="{{url('pension')}}">Liste des caisses de retraites</a>
+								</li>
+								<li>
+									<a href="{{url('#')}}">Liste des animations</a>
+								</li>
+								<li>
+									<a href="{{url('#')}}">Liste des vidéos</a>
+								</li>
+							</ul>
+						</li>
+						@endif
 					</ul>
 
 					@yield('auth')
