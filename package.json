@@ -20,5 +20,8 @@
         "lodash": "^4.17.11",
         "popper.js": "^1.14.4",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "carbon-now-cli": "^1.2.0"
     }
 }
