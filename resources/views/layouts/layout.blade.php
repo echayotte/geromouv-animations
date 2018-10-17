@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{{-- mandatory for Laravel if not $errors --}}
+	{{-- mandatory for Laravel if not, $errors --}}
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-
 	<title>
 		@yield('title')
 	</title>
-
 	{{-- sela theme --}}
 	{{-- social network font icons --}}
 	<link rel="stylesheet" id="genericons-css" 
@@ -19,24 +16,20 @@
 	{{-- favicon --}}
 	<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />
 	{{-- end sela theme --}}
-	
 	@yield('css')
 	{{-- main style --}}
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
-
 	
 </head>
-
 <body class="page">
 	<a id="backToTop"></a>
 	<div class="site">
-
 		<header>
 			<nav id="site-navigation" class="main-navigation">
 				<!-- button for mobile navigation -->
 				<button class="menu-toggle">Menu</button>
 				<div>
-					<div id="logo"><img src="/storage/images/assets/logo-70.png" alt="logo"></div>
+					<div id="logo"><img src="{{ asset('storage/images/assets/logo-70.png') }}" alt="logo"></div>
 					<ul>
 						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
@@ -44,7 +37,6 @@
 						<li>
 							<a target="_blank" href="http://geromouv.fr/notreequipe/">Notre équipe</a>
 						</li>
-
 						<li class="menu-item-has-children">
 							<a href="">Parcours</a>
 							<ul class="sub-menu">
@@ -59,7 +51,6 @@
 								</li>
 							</ul>
 						</li>
-
 						<li class="menu-item-has-children">
 							<a href="">Animations</a>
 							<ul class="sub-menu">
@@ -105,7 +96,6 @@
 						@endif
 					</ul>
 
-					@yield('auth')
 					{{-- @section('auth') --}}
 					<div class="top-right links">
 						@if (Route::has('login'))
@@ -124,11 +114,7 @@
 			</nav>
 			<!-- #site-navigation -->
 		</header>
-		<!-- header -->
-
-
 		@include('layouts.master')
-		<!-- .site-content -->
 		<footer class="site-footer">
 			<div class="social-links">
 				<ul>
@@ -157,20 +143,11 @@
 			<div class="site-info">
 				<a href="http://geromouv-animations/protection-des-donnees" title="Protection des données personnelles">politique de protection des données personnelles</a>
 			</div>
-		<!-- .site-info -->
 		</footer>
-		<!-- .site-footer -->
-
 	</div>
-	<!-- .page -->
-
 	<!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
 	@yield('js')
-	
 	<script src="{{ asset('js/app.js') }}"></script>
-
 </body>
-
 </html>
