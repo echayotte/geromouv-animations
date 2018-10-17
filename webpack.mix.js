@@ -8,7 +8,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 .js('resources/assets/js/addPension.js', 'public/js')
     .sourceMaps()
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/print.scss', 'public/css')
     .browserSync({
         proxy: {
             target: 'localhost:8000',
@@ -20,7 +19,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
         },
         browser: [
             'firefox'
-            // 'google chrome'
         ],
         files: [
             'resources/views/**/*.php',
