@@ -5,10 +5,6 @@
     Demande d'inscription de {{ $member->firstname }} {{ $member->lastname }}
 @endsection
  
-@section('css')
-    <link rel='stylesheet' href='/css/print.css' type='text/css' media='print' />
-@endsection
-
 @section('content')
     <div class="main-content">
         @include('layouts.partials.backToTop')
