@@ -74,7 +74,7 @@
 						
 						@if (Auth::check())
 						<li class="menu-item-has-children">
-							<a href="{{url('home')}}">Admin</a>
+							<a href="{{url('admin')}}">Admin</a>
 							<ul class="sub-menu">
 								<li>
 									<a href="{{url('member')}}">Liste des inscrits</a>
