@@ -328,6 +328,11 @@ tr:hover {
         .entry-content--large {
             height: 400px;
         }
+        .showflex {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
         .login-form {
             border-radius: 5px;
             border: 1px solid $orangeDark;
