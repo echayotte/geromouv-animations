@@ -65,7 +65,6 @@ $(document).ready(function () {
             },
 
             error: function (e) {
-                console.log("pas ok");
                 console.log(e.responseText);
             }
         });

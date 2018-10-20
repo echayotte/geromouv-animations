@@ -2,9 +2,6 @@ $(document).ready(function () {
     
     $(".add-new-mutual").click(function (evt) {
         evt.preventDefault();
-
-        console.log('bouton mutual ok');
-        
         // put the token
         $.ajaxSetup({
             headers: {
@@ -26,7 +23,7 @@ $(document).ready(function () {
             success: function (data) {
 
                 function closeAlert() {
-                    selectDivAjaxMutual.style.display = " none";
+                    selectDivAjaxMutual.style.display = "none";
                 }
 
                 var selectDivAjaxMutual = document.getElementById("ajax-mutual");
