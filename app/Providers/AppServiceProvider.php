@@ -8,21 +8,26 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
+    * Bootstrap any application services.
+    *
+    * @return void
+    */
     public function boot()
     {
-        // when on mac use this
+        //──── when on mac use this ──────────────────────────────────────────
         // Schema::defaultStringLenth(191);
-    }
 
+        //──── see SQL from $queries ─────────────────────────────────────────
+        // \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
+        //     dump([ $query->sql]);
+        // });
+    }
+    
     /**
-     * Register any application services.
-     *
-     * @return void
-     */
+    * Register any application services.
+    *
+    * @return void
+    */
     public function register()
     {
         //
