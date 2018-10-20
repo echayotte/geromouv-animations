@@ -14,7 +14,6 @@ class CreateActivityMemberTable extends Migration
     public function up()
     {
         Schema::create('activity_member', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('activity_id');
             $table->unsignedInteger('member_id');
             $table->timestamps();
