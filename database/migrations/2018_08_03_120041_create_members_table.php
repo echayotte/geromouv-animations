@@ -15,22 +15,21 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('lastname', 55)->index();
-            $table->string('firstname', 55);
+            $table->string('lastname', 50)->index();
+            $table->string('firstname', 50);
             $table->date('birthday');
             $table->enum('gender', ['Femme', 'Homme']);
-            $table->string('address');
+            $table->string('address', 255);
             $table->string('zipcode', 5);
-            $table->string('city', 100);
+            $table->string('city', 50);
             $table->string('email')->unique();
             $table->string('primaryphone', 10);
             $table->string('secondaryphone', 10)->nullable();
-            //──── enlever quand on aura mis la publication pour les deux ──────────────────────
             $table->unsignedInteger('mutual_id');
             $table->unsignedInteger('pension_id');
             $table->enum('ag2r', ['oui', 'non'])->nullable();
-            //──── complementary 1 selectionné par défaut ────────────────────────
             $table->timestamps();
+
         });
     }
     /**
