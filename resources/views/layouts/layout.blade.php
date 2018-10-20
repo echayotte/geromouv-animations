@@ -29,7 +29,10 @@
 				<!-- button for mobile navigation -->
 				<button class="menu-toggle">Menu</button>
 				<div>
+					@if (Auth::check())
+					@else
 					<div id="logo"><img src="{{ asset('storage/images/assets/logo-70.png') }}" alt="logo"></div>
+					@endif
 					<ul>
 						<li class="current_page_item">
 							<a target="_blank" href="http://geromouv.fr/">Accueil</a>
@@ -80,7 +83,7 @@
 									<a href="{{url('member')}}">Liste des inscrits</a>
 								</li>
 								<li>
-									<a href="{{url('mutual')}}">Liste des mutuelles</a>
+									<a href="{{url('mutual')}}">Liste des complémentaires</br>de santé</a>
 								</li>
 								<li>
 									<a href="{{url('pension')}}">Liste des caisses de retraites</a>
