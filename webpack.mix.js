@@ -27,4 +27,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
             '!public/js/**/*.js',
             '!public/css/**/*.css'
         ],
+        notify: false
     });
