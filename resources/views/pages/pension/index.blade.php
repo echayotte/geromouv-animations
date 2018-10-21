@@ -18,6 +18,9 @@ liste des caisses de retraite
             </p>
         @endif
         <h2>Liste des caisses de retraite</h2>
+        <p class="return-admin">
+            <a class="btn btn--grey" href="{{ URL::previous() }}">Retour</a>
+        </p>
         {{-- use @sortable from [Kyslik\ColumnSortable\ColumnSortableServiceProvider] --}}
         <table>
             <tr>

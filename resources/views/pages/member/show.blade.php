@@ -24,6 +24,9 @@ Demande d'inscription de {{ $member->firstname }} {{ $member->lastname }}
             <p>
                 <button class="btn btn--green" id="btn-print">Imprimer</button>
                 <a class="btn btn--orange" href="{{ route('member.edit', $member->id) }}">Modifier</a>
+                @if (Auth::check())
+                <a class="btn btn--grey" href="{{ URL::previous() }}">Retour</a>
+                @endif
             </p>
         </div>
     </section>

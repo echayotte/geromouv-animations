@@ -18,7 +18,9 @@ liste des complémentaires de santé
             </p>
         @endif
         <h2>Liste des complémentaires de santé</h2>
-
+        <p class="return-admin">
+            <a class="btn btn--grey" href="{{ URL::previous() }}">Retour</a>
+        </p>
         {{-- use @sortable from [Kyslik\ColumnSortable\ColumnSortableServiceProvider] --}}
         <table>
             <tr>
