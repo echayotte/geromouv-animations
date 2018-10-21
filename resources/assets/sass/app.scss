@@ -19,6 +19,9 @@ main {
 .page .site-content {
     min-height: 74.5vh;
 }
+.card-body .btn {
+    margin-bottom: 10px;
+}
 #logo {
     position: absolute !important;
     top: 8px !important;
@@ -72,15 +75,15 @@ button {
 }
 .btn--green {
     background-color: $green;
-    color: $white;
 }
 .btn--orange {
     background-color: $orange;
-    color: $white;
 }
 .btn--red {
     background-color: $redPink;
-    color: $white;
+}
+.btn--grey {
+    background-color: $greyTextNav;
 }
 .btn--space {
     margin: 10px 0;
@@ -95,28 +98,26 @@ button {
 // place under btn:hover to take effet
 .btn--white:hover {
     background-color: $green;
-    color: $white;
-    font-weight: bolder;
 }
 .btn--orange:hover {
     background-color: $orangeDarker;
-    color: $white;
-    font-weight: bolder;
 }
 .btn--green:hover {
     background-color: $greenDark;
-    color: $white;
-    font-weight: bolder;
 }
 .btn--red:hover {
     background-color: $redDark;
-    color: $white;
-    font-weight: bolder;
+}
+.btn--grey:hover {
+    background-color: $greyDark;
 }
 .top-right {
     position: absolute;
     right: 120px;
     top: 14px;
+}
+.return-admin {
+    margin: -45px 704px 30px;
 }
 .links>a {
     padding: 5px 10px;
