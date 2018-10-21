@@ -1,4 +1,4 @@
-var btnStages = document.getElementById('btn-stages');
+const btnStages = document.getElementById('btn-stages'),
     btnActivities = document.getElementById('btn-activities'),
     btnEvents = document.getElementById('btn-events'),
         
@@ -7,7 +7,7 @@ var btnStages = document.getElementById('btn-stages');
     hiddenEvents = document.getElementById('presentation-events'),
     hiddenContact = document.getElementById('presentation-contact');
 
-var btn = [btnActivities, btnStages, btnEvents];
+const btn = [btnActivities, btnStages, btnEvents];
 
 
 for (let i = 0; i < btn.length; i++) {
@@ -45,20 +45,18 @@ for (let i = 0; i < btn.length; i++) {
 //set Attributes of buttons to have an anchor for mobile
 if (window.matchMedia('screen and (max-width: 600px)').matches) {
 
-    var anchorActivities = document.getElementById("anchor-activities");
-    var aActivities = document.createAttribute("href");
+    const anchorActivities = document.getElementById("anchor-activities");
+    const aActivities = document.createAttribute("href");
     aActivities.value = "#presentation-activities";
     anchorActivities.setAttributeNode(aActivities);
-    
 
-    var anchorStages = document.getElementById("anchor-stages");
-    var aStages = document.createAttribute("href");
+    const anchorStages = document.getElementById("anchor-stages");
+    const aStages = document.createAttribute("href");
     aStages.value = "#presentation-stages";
     anchorStages.setAttributeNode(aStages);
 
-    var anchorEvents = document.getElementById("anchor-events");
-    var aEvents = document.createAttribute("href");
+    const anchorEvents = document.getElementById("anchor-events");
+    const aEvents = document.createAttribute("href");
     aEvents.value = "#presentation-events";
-    anchorEvents.setAttributeNode(aEvents);
-    
+    anchorEvents.setAttributeNode(aEvents);   
 }
