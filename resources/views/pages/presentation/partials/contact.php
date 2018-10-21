@@ -1,4 +1,5 @@
 <section>
+     <hr>
     <div class="entry-content">
         <header class="entry-header">
             <h2>

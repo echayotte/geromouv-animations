@@ -53,7 +53,6 @@
     <div class="presentation-hidden" id="presentation-stages">@include('pages.presentation.partials.stages')</div>
     <div class="presentation-hidden" id="presentation-events">@include('pages.presentation.partials.events')</div>
     
-    <hr>
     <div id="presentation-contact">@include('pages.presentation.partials.contact')</div>
 </div>
 <!-- .main-content -->
