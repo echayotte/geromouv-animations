@@ -20,5 +20,4 @@ Route::resources([
     'member' => 'MemberController',
     'mutual' => 'MutualController',
     'pension' => 'PensionController',
-    
 ]);
