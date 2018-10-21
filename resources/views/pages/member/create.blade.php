@@ -189,7 +189,7 @@ Formulaire d'inscription à Geromouv'
                     <div class="col-65">
                             <div id="ajax-mutual"></div>
                             <select id="member-mutual" name="member-mutual">
-                                <option id="option-mutual-selected" value="" selected="selected" disabled>votre complémentaire Santé / Mutuelle..</option>
+                                <option id="option-mutual-selected" value="" selected="selected" disabled>votre complémentaire Santé..</option>
                                 @foreach($mutuals as $mutual) {
                                 <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
                                 @endforeach
@@ -199,7 +199,7 @@ Formulaire d'inscription à Geromouv'
                             @endif
                             
                             <div id="removeMutualIfSuccess">
-                                <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter la vôtre si pas dans la liste..">
+                                <input type="text" id="member-new-mutual" name="member-new-mutual" placeholder="Ajouter si manquante..">
                                 <button  class="btn btn--green btn--small add-new-mutual" type="button">Ajouter</button>
                             </div>
                     </div>
@@ -223,7 +223,7 @@ Formulaire d'inscription à Geromouv'
                         @endif
 
                         <div id="removePensionIfSuccess">
-                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter la vôtre si pas dans la liste..">
+                            <input type="text" id="member-new-pension" name="member-new-pension" placeholder="Ajouter si manquante..">
                             <button  class="btn btn--green btn--small add-new-pension" type="button">Ajouter</button>
                         </div>
                     </div>
