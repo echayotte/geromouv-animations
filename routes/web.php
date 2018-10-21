@@ -3,7 +3,7 @@
 //──── AUTHENTICATION ──────────────────────────────────────────────
 Auth::routes();
 // login, register
-Route::get('/admin', 'HomeController@index')->name('admin');
+Route::get('/admin', 'AdminController@index')->name('admin');
 Route::view('/', 'pages.presentation.show'); // necessary when logout
 
 //──── PAGES ─────────────────────────────────────────────────────────
