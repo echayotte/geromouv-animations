@@ -190,7 +190,7 @@ Formulaire d'inscription à Geromouv'
                             <div id="ajax-mutual"></div>
                             <select id="member-mutual" name="member-mutual">
                                 <option id="option-mutual-selected" value="" selected="selected" disabled>votre complémentaire Santé..</option>
-                                @foreach($mutuals as $mutual) {
+                                @foreach($mutuals as $mutual)
                                 <option value="{{ $mutual->id }}" {{ Input::old('member-mutual') == $mutual->id ? 'selected="selected"' : '' }}>{{ $mutual->name }}</option>
                                 @endforeach
                             </select>
@@ -254,7 +254,6 @@ Formulaire d'inscription à Geromouv'
                 </div>
 
             </form>
-
         </div>
     </section>
 </div>
