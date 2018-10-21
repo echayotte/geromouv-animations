@@ -13,7 +13,7 @@ $(document).ready(function () {
         
         $.ajax({
             // route to get the controller use
-            url: 'addMutual',
+            url: '/addMutual',
             type: 'POST',
             data: {
                 // value sent to db via MutualController@store
