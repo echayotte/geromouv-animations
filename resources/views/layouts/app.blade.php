@@ -7,8 +7,15 @@
 
 <div class="top-right links">
     @guest
-    <a href="{{ route('login') }}">Connexion</a>
+    @if(Request::is('login'))
     <a href="{{ route('register') }}">Inscription</a>
+    @else
+    @endif 
+    @if(Request::is('register'))
+    <a href="{{ route('login') }}">Connexion</a>
+    @else
+    @endif
+    
     @else
     <a href="{{ route('logout') }}"
         onclick="event.preventDefault();document.getElementById('logout-form').submit();">Déconnexion</a>
