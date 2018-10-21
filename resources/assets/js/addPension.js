@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         $.ajax({
             // route to get the controller use
-            url: '/addPension',
+            url: 'addPension',
             type: 'POST',
             data: {
                 // value sent to db via PensionController@store
