@@ -2,9 +2,9 @@ $(document).ready(function () {
     
     $(".add-new-mutual").click(function (evt) {
         evt.preventDefault();
-        // put the token
         $.ajaxSetup({
             headers: {
+                // put the token
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
