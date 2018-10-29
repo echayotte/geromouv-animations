@@ -4,7 +4,7 @@ $(document).ready(function () {
         evt.preventDefault();
         $.ajaxSetup({
             headers: {
-                // put the token
+                // put the token in the header
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
@@ -16,7 +16,7 @@ $(document).ready(function () {
             url: '/addMutual',
             type: 'POST',
             data: {
-                // value sent to db via MutualController@store
+                // value sent to DB via MutualController@store
                 'member-new-mutual': newMutual
             },
             dataType: 'JSON',
@@ -35,6 +35,8 @@ $(document).ready(function () {
                 if (data.status) {
                     selectDivAjaxMutual.style.display = " block";
                     createPTag.setAttribute('class', 'error');
+                    document.getElementById('member-new-mutual').value = '';
+
                     window.setTimeout(closeAlert, 1500);
                 }
                 else {
