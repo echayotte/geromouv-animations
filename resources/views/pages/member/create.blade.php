@@ -205,7 +205,7 @@ Formulaire d'inscription à Geromouv'
                     </div>
                 </div>
 
-                {{-- pension─ --}}
+                {{-- pension --}}
                 <div class="row">
                     <div class="col-30">
                         <label for="member-pension">Caisse de Retraite <span class="mandatory">*</span></label>
