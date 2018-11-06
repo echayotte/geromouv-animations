@@ -1,4 +1,6 @@
 <?php
+Config::set('debugbar.enabled', false);
+
 
 //──── AUTHENTICATION ──────────────────────────────────────────────
 Auth::routes();
