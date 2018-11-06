@@ -18,7 +18,7 @@ liste des inscrits
     {{-- use @sortable from [Kyslik\ColumnSortable\ColumnSortableServiceProvider] --}}
     <table>
         <tr>
-            {{-- <th>@sortablelink('id', 'Id')</th> --}}
+            {{-- <th>@sortablelink('columnDB', 'ShowingInformation')</th> --}}
             <th>@sortablelink('lastname', 'Nom')</th>
             <th>@sortablelink('firstname','Prénom')</th>
             <th>@sortablelink('email', 'Mail')</th>
@@ -26,28 +26,23 @@ liste des inscrits
         </tr>
         
         @if($members->count())
-        
-        @foreach($members as $key => $member)
-        
-        <tr>
-            {{-- <td>{{ $member->id }}</td> --}}
-            <td>{{ $member->lastname }}</td>
-            <td>{{ $member->firstname }}</td>
-            <td>{{ $member->email }}</td>
-            <td class="table-right">
-                <a class="btn btn--green btn--small" href="{{ route('member.show', $member->id) }}">Voir</a>
-                <a class="btn btn--orange btn--small" href="{{ route('member.edit', $member->id) }}">Modifier</a>
-                
-                <form action="{{ action('MemberController@destroy', $member->id) }}" method="post" style="display: inline;" onsubmit="if(confirm('Vous êtes sur le point de supprimer \n {{ $member->lastname }} {{ $member->firstname }}.\n Êtes-vous sûr?')) { return true } else {return false };">
-                    @csrf
-                    @method("DELETE")
-                    <input class="btn btn--red btn--small" type="submit" id="submit" value="Supprimer" name="submit" style="display: inline;">
-                </form>
-            </td>
-        </tr>
-        
-        @endforeach
-        
+            @foreach($members as $key => $member)
+                <tr>
+                    <td>{{ $member->lastname }}</td>
+                    <td>{{ $member->firstname }}</td>
+                    <td>{{ $member->email }}</td>
+                    <td class="table-right">
+                        <a class="btn btn--green btn--small" href="{{ route('member.show', $member->id) }}">Voir</a>
+                        <a class="btn btn--orange btn--small" href="{{ route('member.edit', $member->id) }}">Modifier</a>
+                        
+                        <form action="{{ action('MemberController@destroy', $member->id) }}" method="post" style="display: inline;" onsubmit="if(confirm('Vous êtes sur le point de supprimer \n {{ $member->lastname }} {{ $member->firstname }}.\n Êtes-vous sûr?')) { return true } else {return false };">
+                            @csrf
+                            @method("DELETE")
+                            <input class="btn btn--red btn--small" type="submit" id="submit" value="Supprimer" name="submit" style="display: inline;">
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         @endif
         
     </table>
