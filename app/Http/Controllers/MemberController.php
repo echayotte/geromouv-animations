@@ -21,8 +21,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        // sort with kyslik composer method sortable()
-        // sort with kyslik composer
+        // sort with kyslik provider method sortable()
         $members = Member::sortable()->paginate(7);
 
         return view('pages.member.index', compact('members'));
