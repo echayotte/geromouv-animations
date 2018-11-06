@@ -54,6 +54,7 @@
         // width: -webkit-fill-available;
         width: -webkit-stretch;
     }
+    
     //──── MAIN CONTENT ──────────────────────────────────────────────────────────────
     .main-content {
         
@@ -140,6 +141,11 @@
                 .btn--small {
                     margin-left: 10px !important;
                 }
+                .error,
+                .success {
+                    width: 60% !important;
+                }
+                
                 p {
                     margin: none !important;
                     padding: 2px !important;
