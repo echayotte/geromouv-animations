@@ -5,9 +5,9 @@
 /public/js
 /public/images
 /public/mix-manifest.json
+!/storage/app/public/images/assets
+!/storage/app/public/images/pages
 /storage/*.key
-! /storage/app/public/images/assets
-! /storage/app/public/images/pages
 /vendor
 /.idea
 /.vscode
