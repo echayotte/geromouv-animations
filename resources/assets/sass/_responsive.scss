@@ -1,42 +1,49 @@
 //RED
 // @media screen and (max-width: 767.99px) {
-@media screen and (min-width: 0) {
+// @media screen and (min-width: 0) {
+//     body {
+//         background: red;
+//     }
+//     .nav-flex {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         min-height: 54px;
+//     }
+//     #logo {
+//         padding-top: 5px;
+//     }
+//     .links>a {
+//         padding: 5px 10px !important;
+//         display: inline;
+//         font-family: "Source Sans Pro", sans-serif;
+//         line-height: 24px;
+//         box-shadow: 1px 1px 1px #3e4705;
+//         text-decoration: none;
+//         border-radius: 2px;
+//         background-color: #85961e;
+//         color: #ffffff;
+//         transition-duration: 0.4s;
+//     }
+
+//     .links>a:hover {
+//         color: $orangeDark;
+//         background: $white;
+//         box-shadow: 2px 2px 2px #3e4705;
+//     }
+//     .nav-menu {
+//         padding-bottom: 8px;
+//     }
+    
+// }
+
+//GREY
+@media screen and (max-width: 600px) {
+    
     body {
-        // background: red;
+        background: grey;
     }
-    .nav-flex {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 54px;
-    }
-    #logo {
-        padding-top: 5px;
-    }
-    .links>a {
-        padding: 5px 10px !important;
-        display: inline;
-        font-family: "Source Sans Pro", sans-serif;
-        line-height: 24px;
-        box-shadow: 1px 1px 1px #3e4705;
-        text-decoration: none;
-        border-radius: 2px;
-        background-color: #85961e;
-        color: #ffffff;
-        transition-duration: 0.4s;
-    }
-
-    .links>a:hover {
-        color: $orangeDark;
-        background: $white;
-        box-shadow: 2px 2px 2px #3e4705;
-    }
-    .nav-menu {
-        padding-bottom: 8px;
-    }
-}
-
-@media all and (max-width: 600px) {
+    
     //──── BACK TO TOP ──────────────────────────────────────────────────────────────
     aside div a {
         bottom: 10px !important;
@@ -124,7 +131,7 @@
             //──── ENTRY CONTENT ──────────────────────────────────────────────────
             .entry-content {
                 margin: 0 0 0.2em 0 !important;
-
+                
                 //──── VIDEOS ──────────────────────────────────────────────────────────────
                 iframe {
                     border: none;
@@ -212,32 +219,41 @@
 
 }
 
+// PINK
 @media screen and (min-width: 0) and (max-width: 768px){
+    
+    body {
+        background: hotpink;
+    }
+    
     .item-left {
         margin-left: 0px !important;
+    }
+    .btn-inscription {
+        margin-bottom: 0 !important;
     }
 }
 
 //ORANGE
 @media screen and (min-width: 500px) {
     body {
-        // background: orange;
+        background: orange;
+    }
+}
+
+//YELLOW
+@media screen and (min-width: 1030px) {
+    body {
+        background: yellow;
     }
     
 }
-
-// @media screen and (min-width: 1030px) {
-//     body {
-//         background: yellow;
-//     }
-    
-// }
 
 
 //GREEN
 @media screen and (min-width: 1071px) {
     body {
-        // background: green;
+        background: green;
     }
     
     .main-navigation {
