@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-liste des complémentaires de santé
+    liste des complémentaires de santé
 @endsection
 
 @section('css')
@@ -9,7 +9,9 @@ liste des complémentaires de santé
 @endsection
 
 @section('content')
+
 @if (Auth::check())
+
     <div class="entry-content">
         {{-- status to show the data completed in the db --}}
         @if (session('message'))
@@ -17,6 +19,7 @@ liste des complémentaires de santé
                 {{ session('message') }}
             </p>
         @endif
+
         <h2>Liste des complémentaires de santé</h2>
         <p class="return-admin">
             <a class="btn btn--grey" href="{{ URL::previous() }}">Retour</a>
@@ -71,6 +74,5 @@ liste des complémentaires de santé
         </section>
     </div>
 @endif
-    </div>
 
 @endsection

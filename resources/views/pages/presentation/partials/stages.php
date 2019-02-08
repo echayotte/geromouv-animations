@@ -132,8 +132,6 @@
                 </li>
 
             </ul>
-        </div>
-        <!-- .entry-content -->
-    </div>
-    <!-- .presentation-infos -->
+        </div><!-- .entry-content -->
+    </div><!-- .presentation-infos -->
 </section>

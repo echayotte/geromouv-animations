@@ -127,9 +127,9 @@ button {
     background-color: $greyDark;
 }
 
-// .btn-inscription {
-//     margin-bottom: 10px;
-// }
+.btn-inscription {
+    margin-bottom: 10px;
+}
 
 
 // .top-right {
@@ -490,8 +490,7 @@ tr:hover {
             }
         }
 
-        .registration-form,
-            {
+        .registration-form {
             border-radius: 5px;
             border: 1px solid $orangeDark;
             padding: 20px;

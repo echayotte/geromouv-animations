@@ -24,12 +24,12 @@ Formulaire d'inscription à Geromouv'
                 <li>Le remplir en ligne</li>
                 <li>L'imprimer</li>
                 <li>Faire remplir et signer le certificat médical l'accompagnant par son médecin traitant</li>
-                <li>Établir un chèque de <strong>100€</strong> à l'ordre de Géromouv'</li>
+                <li>Établir un chèque de <strong>xx€</strong> à l'ordre de Géromouv'</li>
                 <li>L' envoyer à l'adresse : <strong><em>Géromouv', Lieu dit Salgues - 46090 Labastide-Marnhac</em></strong></li>
                 <li>Vous serez contacté par un membre de Géromouv' à la validation de votre inscription</li>
             </ol>
             <p class="note">
-                Si vous éprouvez des difficultés à le remplir en ligne, veuillez contacter <strong>Christine</strong> qui se chargera de le remplir avec vous par téléphone: <strong>06 16 07 86 53</strong>
+                Si vous éprouvez des difficultés à le remplir en ligne, veuillez contacter <strong>Christine</strong> qui se chargera de le remplir avec vous par téléphone: <strong>xx xx xx xx</strong>
             </p>
         </div>
     </section>

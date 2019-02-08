@@ -1,5 +1,6 @@
 <section>
-     <hr>
+    <hr>
+
     <div class="entry-content">
         <header class="entry-header">
             <h2>
@@ -12,9 +13,11 @@
             <br> Contact de
             <strong>Christine</strong>, la responsable des animations :
             <br>
-            <strong>06 16 07 86 53</strong>
+            <strong>xx xx xx xx</strong>
         </p>
+
         <hr>
+        
         <header class="entry-header">
             <h2><span>S'incrire aux animations Géromouv'</span></h2>
         </header>

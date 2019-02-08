@@ -3,17 +3,19 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> {{-- mandatory for Laravel if not, $errors --}}
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">{{-- mandatory for Laravel if not, $errors --}}
 	<title>
 		@yield('title')
 	</title>
-	{{-- sela theme --}} {{-- social network font icons --}}
-	<link rel="stylesheet" id="genericons-css" href="https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.css" type="text/css"
-	 media="all"> {{-- favicon --}}
-	<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" /> {{-- end sela theme --}} @yield('css') {{-- main style --}}
-	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
 
+	{{-- sela theme --}}
+	<link rel="stylesheet" id="genericons-css" href="https://cdnjs.cloudflare.com/ajax/libs/genericons/3.1/genericons.css" type="text/css"{{-- social network font icons --}}
+	 media="all"> 
+	<link rel="icon" href="/storage/images/assets/favicon_geromouv.png" sizes="32x32" />{{-- end sela theme --}}
+
+	@yield('css'){{-- main style --}}
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet" type='text/css' media='all'>
 </head>
 
 <body class="page">
@@ -27,7 +29,7 @@
 			@endif
 					<div class="nav-flex">
 						@if (Auth::check())
-						
+						{{-- nothing --}}
 						@else
 						<img id="logo" src="{{ asset('storage/images/assets/logo-70.png') }}" alt="logo">
 						@endif
@@ -39,53 +41,53 @@
 						</div>
 						<div>
 							<ul>
-						
 								@if (Auth::check())
-								<li class="current_page_item item-left">
-									<a href="#">Accueil</a>
-								</li>
+									<li class="current_page_item item-left">
+										<a href="#">Accueil</a>
+									</li>
 								@else
-								<li class="current_page_item">
-									<a href="#">Accueil</a>
-								</li>
+									<li class="current_page_item">
+										<a href="#">Accueil</a>
+									</li>
 								@endif
-								<li>
-									<a href="#">Notre équipe</a>
-								</li>
-								<li class="menu-item-has-children">
-									<a href="#">Parcours</a>
-									<ul class="sub-menu">
-										<li>
-											<a href="#">Nos modules d&rsquo;exercices</a>
-										</li>
-										<li>
-											<a href="#">Nos réalisations</a>
-										</li>
-										<li>
-											<a href="#">Nos soutiens</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu-item-has-children">
-									<a href="#">Animations</a>
-									<ul class="sub-menu">
-										<li>
-											<a href="{{url('presentation')}}">Présentation et Inscription</a>
-										</li>
-										<li>
-											<a href="#">Planning</a>
-										</li>
-										<li>
-											<a href="#">Animateurs et Professionnels de Santé</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Actualités</a>
-								</li>
-								<li>
-									<a href="#">Contact</a>
-								</li>
+
+									<li>
+										<a href="#">Notre équipe</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">Parcours</a>
+										<ul class="sub-menu">
+											<li>
+												<a href="#">Nos modules d&rsquo;exercices</a>
+											</li>
+											<li>
+												<a href="#">Nos réalisations</a>
+											</li>
+											<li>
+												<a href="#">Nos soutiens</a>
+											</li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">Animations</a>
+										<ul class="sub-menu">
+											<li>
+												<a href="{{url('presentation')}}">Présentation et Inscription</a>
+											</li>
+											<li>
+												<a href="#">Planning</a>
+											</li>
+											<li>
+												<a href="#">Animateurs et Professionnels de Santé</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Actualités</a>
+									</li>
+									<li>
+										<a href="#">Contact</a>
+									</li>
 						
 								@if (Auth::check()) 
 									<li class="menu-item-has-children">
@@ -117,8 +119,8 @@
 					</div>
 				</nav><!-- #site-navigation -->
 		</header>
-
-	@include('layouts.master')
+	
+		@include('layouts.master')
 
 		<footer class="site-footer">
 			<div class="social-links">
@@ -145,11 +147,13 @@
 					</li>
 				</ul>
 			</div>
+
 			<div class="site-info">
 				<a href="http://geromouv-animations/protection-des-donnees" title="Protection des données personnelles">politique de protection des données personnelles</a>
 			</div>
 		</footer>
 	</div>
+	
 	<!-- SCRIPTS -->
 	@yield('js')
 	<script src="{{ asset('js/app.js') }}"></script>

@@ -1,11 +1,10 @@
 let mix = require('laravel-mix')
 
-
 mix.js('resources/assets/js/app.js', 'public/js')
-.js('resources/assets/js/presentation.js', 'public/js')
-.js('resources/assets/js/datepicker.js', 'public/js')
-.js('resources/assets/js/addMutual.js', 'public/js')
-.js('resources/assets/js/addPension.js', 'public/js')
+    .js('resources/assets/js/presentation.js', 'public/js')
+    .js('resources/assets/js/datepicker.js', 'public/js')
+    .js('resources/assets/js/addMutual.js', 'public/js')
+    .js('resources/assets/js/addPension.js', 'public/js')
     .sourceMaps()
     .sass('resources/assets/sass/app.scss', 'public/css')
     .browserSync({

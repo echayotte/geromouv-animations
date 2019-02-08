@@ -4,6 +4,7 @@ Config::set('debugbar.enabled', false);
 
 //──── AUTHENTICATION ──────────────────────────────────────────────
 Auth::routes();
+
 // login, register
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::view('/', 'pages.presentation.show'); // necessary when logout
