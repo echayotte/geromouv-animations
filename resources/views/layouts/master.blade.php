@@ -3,13 +3,11 @@
         <div class="content-area">
             <div class="site-main">
                 <main class="page">
+                    
                     @yield('content')
-                </main>
-                <!-- .page-->
-            </div>
-            <!-- .site-main -->
-        </div>
-        <!-- .content-area -->
-    </div>
-    <!-- .content-wrapper -->
-</div>
+
+                </main><!-- .page-->
+            </div><!-- .site-main -->
+        </div><!-- .content-area -->
+    </div><!-- .content-wrapper -->
+</div><!-- .site-content -->

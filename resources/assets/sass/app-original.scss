@@ -9,10 +9,6 @@
 
 // links pour images : url("/storage/images/assets/xxx"
 
-#logo {
-    width: 180px;
-}
-
 .content-wrapper {
     padding-bottom: 0;
 }
@@ -24,12 +20,18 @@ main {
 
 .page .site-content {
     min-height: 74.5vh;
-    min-width: 300px;
 }
 
 .card-body .btn {
     margin-bottom: 10px;
 }
+
+// #logo {
+//     position: absolute !important;
+//     top: 8px !important;
+//     left: 105px;
+//     // display: inline-block !important;
+// }
 
 /* Style the active class on mouse-over */
 .active>a,
@@ -127,11 +129,6 @@ button {
     background-color: $greyDark;
 }
 
-.btn-inscription {
-    margin-bottom: 10px;
-}
-
-
 // .top-right {
 //     position: absolute;
 //     right: 120px;
@@ -212,13 +209,11 @@ tr:hover {
  * main content                                                     *
  *                                                                  */
 //********************************************************************
-.item-left {
- margin-left: 120px;
-} 
 
 .main-content {
+
+    //──── ARROW BACK TO TOP ─────────────────────────────────────────────
     aside div a {
-        //──── ARROW BACK TO TOP ─────────────────────────────────────────────
         display: scroll;
         position: fixed;
         bottom: 15px;
@@ -255,7 +250,7 @@ tr:hover {
             width: 100%;
             padding-bottom: 0;
 
-            margin-bottom: 0;
+            // margin-bottom: 0;
             .cards {
                 display: flex;
                 flex-flow: row wrap;
@@ -268,71 +263,7 @@ tr:hover {
 
                 .card {
                     width: 32%;
-            		height: 166px;
-                    position: relative;
-
-
-                    &__body {
-                        padding: 1em;
-                        top: 100%;
-
-                        button {
-                            margin-left: 100px;
-                        }
-                    }
-
-                    &:hover .card__body {
-                        position: absolute;
-                        top: 50px;
-                        background: $orangeDark;
-                        color: $white;
-                        height: 100%;
-                        width: 100%;
-                        transition: top .5s;
-                        margin: 0;
-
-                        h3 {
-                            font-weight: bolder;
-                            text-align: left;
-                            color: $white;
-                        }
-                    }
-                }
-            }
-
-            .cards {
-                // display: flex;
-                // flex-flow: row wrap;
-                // justify-content: space-between;
-
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: nowrap;
-                // background: #855;
-
-                &__card {
-                    // position: relative;
-                    overflow: hidden;
-                    // background: yellow;
-
-                    width: 100%;
-                    // max-width: 300px;
-                    // height: auto;
-                    // padding: 0 .5em;
-                }
-
-                .card {
-                    width: 32%;
                     height: 166px;
-                    overflow: hidden;
-
-                    position: relative;
-                    // background: plum;
-
-                    &__img {
-                        width: 100%;
-                    }
 
                     &__body {
                         padding: 1em;
@@ -490,7 +421,8 @@ tr:hover {
             }
         }
 
-        .registration-form {
+        .registration-form,
+            {
             border-radius: 5px;
             border: 1px solid $orangeDark;
             padding: 20px;

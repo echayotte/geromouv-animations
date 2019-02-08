@@ -1,5 +1,52 @@
-@media all and (max-width: 600px) {
+//RED
+// @media screen and (max-width: 767.99px) {
+@media screen and (min-width: 0) {
+    // body {
+    //     background: red;
+    // }
+    .nav-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 54px;
+    }
+    #logo {
+        padding-top: 5px;
+    }
+    .links>a {
+        padding: 5px 10px !important;
+        display: inline;
+        font-family: "Source Sans Pro", sans-serif;
+        line-height: 24px;
+        box-shadow: 1px 1px 1px #3e4705;
+        text-decoration: none;
+        border-radius: 2px;
+        background-color: #85961e;
+        color: #ffffff;
+        transition-duration: 0.4s;
+    }
 
+    .links>a:hover {
+        color: $orangeDark;
+        background: $white;
+        box-shadow: 2px 2px 2px #3e4705;
+    }
+    .nav-menu {
+        padding-bottom: 8px;
+    }
+
+    .main-content section .login-form .error {
+        margin-left: 4px !important;
+    }
+}
+
+//GREY
+@media screen and (max-width: 600px) {
+    
+    // body {
+    //     background: grey;
+    // }
+    
     //──── BACK TO TOP ──────────────────────────────────────────────────────────────
     aside div a {
         bottom: 10px !important;
@@ -10,20 +57,16 @@
     h1 {
         letter-spacing: 0;
     }
+
     h2 {
         letter-spacing: 0;
     }
 
-    #logo {
-        position: absolute !important;
-        top: 2px !important;
-        left: 120px !important;
-    }
-
-       //──── TABLE ─────────────────────────────────────────────────────────
+    //──── TABLE ─────────────────────────────────────────────────────────
     article {
         overflow-x: auto;
     }
+
     table {
         width: 100%;
         display: block;
@@ -31,12 +74,14 @@
         white-space: nowrap;
         border: none !important;
     }
+
     table tbody tr th {
         vertical-align: baseline;
         // min-width: 73px;
     }
+
     .content-area {
-        margin-top:-30px;
+        margin-top: -30px;
     }
 
     //──── TOGGLE-NAVIGATION ─────────────────────────────────────────────
@@ -45,27 +90,31 @@
         right: 10px !important;
         top: 14px;
     }
+
     .menu-toggle {
-        margin:0 !important;
+        margin: 0 !important;
     }
+
     div.card-body a.btn.btn--green {
         margin-bottom: 10px;
         width: -moz-available;
         // width: -webkit-fill-available;
         width: -webkit-stretch;
     }
-    
+
     //──── MAIN CONTENT ──────────────────────────────────────────────────────────────
     .main-content {
-        
+
         section {
             h1.entry-title {
                 margin-top: -10px;
             }
+
             //──── One member ────────────────────────────────────────────────────
             .showflex {
                 display: flex;
                 flex-direction: column;
+
                 // align-items: flex-start;
                 // justify-content: space-around;
                 &__item {
@@ -81,10 +130,11 @@
                 margin: -20px 0 0 0 !important;
                 width: 100% !important;
             }
+
             //──── ENTRY CONTENT ──────────────────────────────────────────────────
             .entry-content {
                 margin: 0 0 0.2em 0 !important;
-
+                
                 //──── VIDEOS ──────────────────────────────────────────────────────────────
                 iframe {
                     border: none;
@@ -100,6 +150,7 @@
                         width: 100% !important;
                         // width: 249px !important;
                         margin-bottom: 10px;
+
                         &__img {
                             width: 100% !important;
                             background-size: cover !important;
@@ -110,7 +161,7 @@
                 .alignleft {
                     max-width: 100% !important;
                 }
-                
+
                 h4 {
                     padding-top: 0 !important;
                 }
@@ -141,11 +192,12 @@
                 .btn--small {
                     margin-left: 10px !important;
                 }
+
                 .error,
                 .success {
                     width: 60% !important;
                 }
-                
+
                 p {
                     margin: none !important;
                     padding: 2px !important;
@@ -159,6 +211,7 @@
                     margin-top: 12px;
                 }
             }
+
             //──── SHOW MEMBER ──────────────────────────────────────────────────────────────
             li span {
                 display: block;
@@ -166,19 +219,101 @@
             }
         }
     }
+
 }
-    // BOOTSTRAP
-    // Extra small devices (portrait phones, less than 576px)
-    @media (max-width: 575.98px) {}
 
-    // Small devices (landscape phones, less than 768px)
-    @media (max-width: 767.98px) {}
+// PINK
+@media screen and (min-width: 0) and (max-width: 768px){
+    
+    // body {
+    //     background: hotpink;
+    // }
+    
+    .item-left {
+        margin-left: 0px !important;
+    }
+    .btn-inscription {
+        margin-bottom: 0 !important;
+    }
+    .links {
+        margin: 20px 0;
+    }
+    // .main-content section .login-form .error {
+    //     margin-left: 4px !important;
+    // }
+}
 
-    // Medium devices (tablets, less than 992px)
-    @media (max-width: 991.98px) {}
+//ORANGE
+@media screen and (min-width: 500px) {
+    // body {
+    //     background: orange;
+    // }
 
-    // Large devices (desktops, less than 1200px)
-    @media (max-width: 1199.98px) {}
+    .main-content section .entry-content .cards .card {
+        height: 133px !important;
+        &__body h3 {
+            margin-bottom: 4px !important;
+        }
+        &__body button {
+            margin-left: 60px !important;
+        }
+    }
+}
 
-    // Extra large devices (large desktops)
-    // No media query since the extra-large breakpoint has no upper bound on its width
+//YELLOW
+@media screen and (min-width: 1030px) {
+    // body {
+    //     background: yellow;
+    // }
+    
+}
+
+@media screen and (min-width: 1071) and (max-width:1179) {
+    .main-content section .entry-content .cards .card {
+        height: 157px !important;
+
+        &__body h3 {
+            margin-bottom: 20px !important;
+        }
+
+        &__body button {
+            margin-left: 80px !important;
+        }
+    }
+}
+
+//GREEN
+@media screen and (min-width: 1071px) {
+    // body {
+    //     background: green;
+    // }
+    
+    .main-navigation {
+        padding: 0;
+    }
+
+    .nav-flex {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-left: 20px;
+    }
+
+    #logo {
+        margin-left: -20px;
+        padding-right: 30px;
+        padding-top: 0px;
+    }
+    .main-content section .entry-content .cards .card {
+        height: 166px !important;
+
+        &__body h3 {
+            margin-bottom: 20px !important;
+        }
+
+        &__body button {
+            margin-left: 80px !important;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 <section>
-     <hr>
+    <hr>
+
     <div class="entry-content">
         <header class="entry-header">
             <h2>
@@ -14,7 +15,9 @@
             <br>
             <strong>xx xx xx xx</strong>
         </p>
+
         <hr>
+        
         <header class="entry-header">
             <h2><span>S'incrire aux animations Géromouv'</span></h2>
         </header>
@@ -23,7 +26,7 @@
             <br/> merci.
         </p>
         <p>
-            <a class="btn" href="/member/create">Inscription</a>
+            <a class="btn btn-inscription" href="/member/create">Inscription</a>
         </p>
     </div>
 </section>

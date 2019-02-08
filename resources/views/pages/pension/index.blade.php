@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-liste des caisses de retraite
+    liste des caisses de retraite
 @endsection
 
 @section('css')
@@ -9,7 +9,9 @@ liste des caisses de retraite
 @endsection
 
 @section('content')
+
 @if (Auth::check())
+
     <div class="entry-content">
          {{-- status to show the data completed in the db --}}
         @if (session('message'))
@@ -17,6 +19,7 @@ liste des caisses de retraite
                 {{ session('message') }}
             </p>
         @endif
+
         <h2>Liste des caisses de retraite</h2>
         <p class="return-admin">
             <a class="btn btn--grey" href="{{ URL::previous() }}">Retour</a>
