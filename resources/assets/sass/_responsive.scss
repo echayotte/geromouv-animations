@@ -241,23 +241,31 @@
     // .main-content section .login-form .error {
     //     margin-left: 4px !important;
     // }
+    
 }
 
 //ORANGE
 @media screen and (min-width: 500px) {
+
     // body {
     //     background: orange;
     // }
-
-    .main-content section .entry-content .cards .card {
-        height: 133px !important;
-        &__body h3 {
-            margin-bottom: 4px !important;
+    
+    .main-content {
+        section .entry-content .cards .card {
+            height: 133px !important;
+            &__body h3 {
+                margin-bottom: 4px !important;
+            }
+            &__body button {
+                margin-left: 60px !important;
+            }
         }
-        &__body button {
-            margin-left: 60px !important;
+        .showflex {
+            margin-top: 40px;
         }
     }
+    
 }
 
 //YELLOW
