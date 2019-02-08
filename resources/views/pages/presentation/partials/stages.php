@@ -50,7 +50,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -64,7 +64,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -78,7 +78,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -92,7 +92,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -106,7 +106,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -120,7 +120,7 @@
                 <li class="list__items items">
                     <ul class="items__sub-items sub-items">
                         <li class="sub-items__more"><a href="#" class="btn btn--small">voir ce stage</a></li>
-                        <li class="sub-items__title">stage xxx</li>
+                        <li class="sub-items__title">xxx</li>
                         <li class="sub-items__dot">: du </li>
                         <li class="sub-items__date">[jj mm]</li>
                         <li class="sub-items__dot"> au </li>
@@ -132,8 +132,6 @@
                 </li>
 
             </ul>
-        </div>
-        <!-- .entry-content -->
-    </div>
-    <!-- .presentation-infos -->
+        </div><!-- .entry-content -->
+    </div><!-- .presentation-infos -->
 </section>
